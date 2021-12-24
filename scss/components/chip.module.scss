@@ -1,0 +1,61 @@
+@import '../mixins/color';
+@import '../variables';
+
+// List of chip
+.chips {
+    display: flex;
+    height: 32px;
+    align-items: center;
+}
+
+// Description for the list
+.chips__descriptor {
+    margin-right: $defaultUnit;
+    padding-top: $defaultUnit * 0.5;
+}
+
+// Individual chip element
+.chip {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    height: $defaultUnit * 2;
+    padding: ($defaultUnit * 0.5) $defaultUnit;
+    border-radius: $defaultUnit * 2;
+    background-color: var(--color-bg-lighter);
+    transition: all 0.2s ease-in-out;
+    margin: ($defaultUnit * 0.5) $defaultUnit 0 0;
+
+    &:not(:last-child) {
+        margin-right: $defaultUnit;
+    }
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+    }
+}
+
+// Textual content for the chip
+.chip__content {
+    display: inline-block;
+}
+
+@each $color, $value in $themeColors {
+    .#{$color} {
+        border: 1px solid var($value);
+
+        &.solid {
+            background-color: var($value);
+            color: var(map-get($contrastColors, $color));
+
+            &:hover {
+                background-color: var(#{$value}-light);
+            }
+        }
+
+        &:hover {
+            border-color: var(#{$value}-light);
+        }
+    }
+}

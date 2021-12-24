@@ -1,0 +1,94 @@
+:root {
+    font-family: 'Roboto', sans-serif;
+    font-size: $defaultFontSize;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: $defaultFontSize;
+}
+
+p,
+h1,
+h2,
+h3,
+th,
+td {
+    @if (lightness($background) > 70) {
+        color: $grey-900;
+    }
+    @else {
+        color: $grey-100;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: $tertiary;
+    margin: 0;
+}
+
+h1 {
+    color: $primary;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: $defaultUnit * 0.75;
+    font-size: 1.6rem;
+
+    @include sm-up() {
+        font-size: 2rem;
+    }
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: $primary;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+a {
+    color: $primary;
+
+    .icon svg {
+        fill: $primary;
+    }
+
+    &:hover {
+        color: $grey-100;
+
+        .icon svg {
+            fill: $grey-100;
+        }
+    }
+}
+
+strong {
+    color: $secondary;
+}
+
+article {
+    margin-bottom: 2rem;
+}
+
+.clear {
+    clear: both;
+}
+
+.wrapper {
+    max-width: $defaultUnit * 120;
+}

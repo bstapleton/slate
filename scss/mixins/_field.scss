@@ -1,0 +1,39 @@
+$dataTypes: (
+    "postcode": 6,
+    "sortcode": 6,
+    "bankaccount": 8,
+    "creditcard": 16
+);
+
+@mixin dataTypes {
+    @each $type, $multiplier in $dataTypes {
+        &[data-content="#{$type}"] {
+            max-width: $defaultFontSize * $multiplier;
+        }
+    }
+}
+
+@mixin hiddenInput {
+    width: 0;
+    height: 0;
+    padding: 0;
+    border: none;
+    position: absolute;
+}
+
+@mixin range-track() {
+    cursor: pointer;
+    height: $defaultUnit / 4;
+    transition: all .2s ease;
+    max-width: $maxInputWidth - 40px;
+}
+
+@mixin range-thumb() {
+    background: $primary;
+    transition: all .2s ease;
+    border-radius: 50%;
+    cursor: pointer;
+    height: $defaultUnit * 2;
+    width: $defaultUnit * 2;
+    margin-top: 1px;
+}

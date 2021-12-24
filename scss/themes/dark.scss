@@ -1,0 +1,14 @@
+:root {
+  --primary: #e7a488;
+  --secondary: #d07e78;
+  --tertiary: #c6b3c6;
+  --background: #2f2f3f;
+}
+
+@import '../variables';
+
+* {
+  color: $grey-300;
+}
+
+@import '../main';

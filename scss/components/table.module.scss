@@ -1,0 +1,188 @@
+@use '../variables';
+@use '../mixins/gradient';
+@use '../mixins/shadow';
+@use '../mixins/flex';
+
+.table {
+    @include shadow.shadow-2dp();
+    width: 100%;
+    border-spacing: inherit;
+    border-collapse: initial;
+    margin-bottom: variables.$defaultUnit * 2;
+    border-left: 3px solid var(--color-grey-200);
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:hover {
+        @include shadow.shadow-3dp();
+    }
+}
+
+.table__header {
+    .table__row {
+        @include gradient.lightDiagonalGradient(var(--color-primary), 10%);
+    }
+
+    .table__headerCell {
+        background: transparent;
+        border-left: 1px solid var(--color-grey-200);
+        border-right: 1px solid scale-color(var(--color-grey-200), $lightness: 95%);
+        color: #fff;
+
+        &:first-child {
+            border-radius: 0;
+            border-left: none;
+        }
+
+        &:last-child {
+            border-radius: 0 5px 0 0;
+            border-right: none;
+        }
+
+        .button {
+            border: none;
+            height: variables.$defaultUnit * 3;
+        }
+    }
+}
+
+.table__body {
+    .table__row {
+        .table__cell,
+        .table__headerCell {
+            transition: background-color 0.1s ease-in-out;
+        }
+
+        &:hover {
+            .table__cell,
+            .table__headerCell {
+                background: var(--color-grey-100);
+            }
+        }
+
+        &:last-child {
+            .table__cell:first-child {
+                border-radius: 0;
+            }
+
+            .table__cell:last-child {
+                border-radius: 0 0 5px 0;
+            }
+        }
+    }
+}
+
+.table__row {
+    .table__cell:first-child,
+    .table__headerCell:first-child {
+        padding-left: variables.$defaultUnit * 3;
+    }
+
+    &:last-child {
+        td,
+        th {
+            border-bottom: none;
+        }
+    }
+
+    .table__row--neutral {
+        td {
+            background-color: lighten(var(--color-info), 20%);
+
+            &:first-child {
+                border-left: variables.$defaultUnit solid var(--color-info);
+                padding-left: variables.$defaultUnit * 1.5;
+            }
+        }
+    }
+
+    .table__row--danger,
+    .table__row--dangerBorder {
+        .table__cell {
+            &:first-child {
+                border-left: variables.$defaultUnit solid var(--color-danger);
+                padding-left: variables.$defaultUnit * 1.5;
+            }
+        }
+    }
+
+    .table__row--danger {
+        .table__cell,
+        .table__headerCell {
+            background-color: lighten(var(--color-danger), 20%);
+        }
+    }
+
+    .table__row--success {
+        .table__cell,
+        .table__headerCell {
+            background-color: lighten(var(--color-success), 20%);
+
+            &:first-child {
+                border-left: variables.$defaultUnit solid var(--color-success);
+                padding-left: variables.$defaultUnit * 1.5;
+            }
+        }
+    }
+
+    .table__row--warning {
+        .table__cell,
+        .table__headerCell {
+            background-color: lighten(var(--color-warning), 20%);
+
+            &:first-child {
+                border-left: variables.$defaultUnit solid var(--color-warning);
+                padding-left: variables.$defaultUnit * 1.5;
+            }
+        }
+    }
+}
+
+.table__headerCell,
+.table__cell {
+    padding: (variables.$defaultUnit * 1.5) variables.$defaultUnit;
+    font-size: 13px;
+    color: var(--color-grey-900);
+    vertical-align: middle;
+
+    .button {
+        margin: 0;
+    }
+
+    &.cell-link {
+        padding: 0 !important;
+
+        a {
+            padding: variables.$defaultUnit * 2;
+            display: block;
+        }
+    }
+}
+
+.table__actions {
+    @include flex.flex();
+    justify-content: space-between;
+
+    .button {
+        flex: 1 1 50%;
+        margin: variables.$defaultUnit * 0.5;
+        text-align: center;
+    }
+}
+
+.table__headerCell {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.table__footer {
+    .table__headerCell {
+        border-top: 1px solid var(--color-grey-200);
+        border-bottom: none;
+    }
+}
+
+.table__cell--long,
+.table__headerCell--long {
+    max-width: 400px;
+}
