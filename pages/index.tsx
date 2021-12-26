@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Card, { CardHeader, CardContent, CardFooter } from "../components/Card";
 import Table from "../components/Table";
 import Chip, {ChipList} from "../components/Chip";
+import Button from '../components/Button';
 
 const Home: NextPage = () => {
   return (
@@ -25,6 +26,11 @@ const Home: NextPage = () => {
               <CardHeader heading={'Hello there'} />
               <CardContent>
                 Card content goes here
+                <div>
+                  <Button type={'indigo'}>Indigo button</Button>
+                  <Button type={'green'}>Green button</Button>
+                  <Button type={'green'} disabled>Disabled button</Button>
+                </div>
                 <ChipList>
                   <Chip type={'tertiary'} solid>Chippy</Chip>
                   <Chip type={'secondary'} solid>Chippy</Chip>
