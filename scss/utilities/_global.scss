@@ -1,11 +1,14 @@
+@use '../_variables';
+@use '../mixins/grid';
+
 :root {
     font-family: 'Roboto', sans-serif;
-    font-size: $defaultFontSize;
+    font-size: variables.$defaultFontSize;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: $defaultFontSize;
+    font-size: variables.$defaultFontSize;
 }
 
 p,
@@ -14,12 +17,7 @@ h2,
 h3,
 th,
 td {
-    @if (lightness($background) > 70) {
-        color: $grey-900;
-    }
-    @else {
-        color: $grey-100;
-    }
+    color: var(--color-contrast-high);
 }
 
 h1,
@@ -28,25 +26,25 @@ h3,
 h4 {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    color: $tertiary;
+    color: var(--color-tertiary);
     margin: 0;
 }
 
 h1 {
-    color: $primary;
+    color: var(--color-primary);
     font-weight: 200;
     text-transform: uppercase;
-    letter-spacing: $defaultUnit * 0.75;
+    letter-spacing: variables.$defaultUnit * 0.75;
     font-size: 1.6rem;
 
-    @include sm-up() {
+    @include grid.sm-up() {
         font-size: 2rem;
     }
 }
 
 h2 {
     font-size: 1.4rem;
-    color: $primary;
+    color: var(--color-primary);
 }
 
 h3 {
@@ -62,23 +60,15 @@ h5 {
 }
 
 a {
-    color: $primary;
-
-    .icon svg {
-        fill: $primary;
-    }
+    color: var(--color-primary);
 
     &:hover {
-        color: $grey-100;
-
-        .icon svg {
-            fill: $grey-100;
-        }
+        color: var(--color-contrast-high);
     }
 }
 
 strong {
-    color: $secondary;
+    color: var(--color-secondary);
 }
 
 article {
@@ -90,5 +80,5 @@ article {
 }
 
 .wrapper {
-    max-width: $defaultUnit * 120;
+    max-width: variables.$defaultUnit * 120;
 }

@@ -1,3 +1,5 @@
+@use '../mixins/grid';
+
 .hidden {
     display: none;
 }
@@ -14,31 +16,31 @@
     display: inline-block;
 }
 
-@include xs() {
+@include grid.xs() {
     .visible--xs {
         display: initial;
     }
 }
 
-@include sm() {
+@include grid.sm() {
     .visible--sm {
         display: initial;
     }
 }
 
-@include md() {
+@include grid.md() {
     .visible--md {
         display: initial;
     }
 }
 
-@include lg() {
+@include grid.lg() {
     .visible--lg {
         display: initial;
     }
 }
 
-@include xl() {
+@include grid.xl() {
     .visible--xl {
         display: initial;
     }
