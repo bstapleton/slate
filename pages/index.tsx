@@ -6,6 +6,7 @@ import Card, { CardHeader, CardContent, CardFooter } from "../components/Card";
 import Table from "../components/Table";
 import Chip, {ChipList} from "../components/Chip";
 import Button from '../components/Button';
+import {Icon} from "../components/Icon";
 
 const Home: NextPage = () => {
   return (
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
                   <Chip type={'secondary'} solid>Chippy</Chip>
                   <Chip type={'primary'}>Chippy</Chip>
                 </ChipList>
+                <Icon color={'pink'} />
               </CardContent>
               <CardFooter>Footer go brrr</CardFooter>
             </Card>

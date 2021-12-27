@@ -1,0 +1,52 @@
+@use '../mixins/color';
+@use '../variables';
+
+.icon {
+    width: variables.$defaultUnit * 4.5;
+    height: variables.$defaultUnit * 4.5;
+}
+
+.counter {
+    display: initial;
+    fill: var(--color-danger);
+}
+
+@each $color, $value in variables.$themeColors {
+    .#{$color} {
+        svg {
+            fill: var($value);
+        }
+
+        svg {
+            .background {
+                fill: var(#{$value}-light);
+            }
+        }
+    }
+}
+
+.symbolOnly {
+    .outline {
+        display: none;
+    }
+}
+
+.small {
+    width: variables.$defaultUnit * 3;
+    height: variables.$defaultUnit * 3;
+
+    svg {
+        width: variables.$defaultUnit * 3;
+        height: variables.$defaultUnit * 3;
+    }
+}
+
+.smaller {
+    width: variables.$defaultUnit * 2;
+    height: variables.$defaultUnit * 2;
+
+    svg {
+        width: variables.$defaultUnit * 2;
+        height: variables.$defaultUnit * 2;
+    }
+}
