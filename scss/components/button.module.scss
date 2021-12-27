@@ -1,12 +1,11 @@
-@import '../mixins/color';
-@import '../variables';
-@import '../mixins/box-sizing';
+@use '../variables';
+@use '../mixins/box-sizing';
 
-$buttonHeight: $defaultUnit * 5;
-$buttonMinWidth: $defaultUnit * 8;
+$buttonHeight: variables.$defaultUnit * 5;
+$buttonMinWidth: variables.$defaultUnit * 8;
 
 .button {
-    @include boxSizing;
+    @include box-sizing.boxSizing;
     display: inline-flex;
     height: $buttonHeight;
     line-height: $buttonHeight;
@@ -27,20 +26,20 @@ $buttonMinWidth: $defaultUnit * 8;
 
     &:not(:first-child) {
         &.pull-right {
-            margin: ($defaultUnit * 2) 0 ($defaultUnit * 2) ($defaultUnit * 2);
+            margin: (variables.$defaultUnit * 2) 0 (variables.$defaultUnit * 2) (variables.$defaultUnit * 2);
         }
     }
 
     &:not(:last-child) {
         &:not(.pull-right) {
-            margin: ($defaultUnit * 2) ($defaultUnit * 2) ($defaultUnit * 2) 0;
+            margin: (variables.$defaultUnit * 2) (variables.$defaultUnit * 2) (variables.$defaultUnit * 2) 0;
         }
     }
 }
 
 .button--withIcon {
     .button__text {
-        padding-left: ($buttonHeight * 0.75) + $defaultUnit;
+        padding-left: ($buttonHeight * 0.75) + variables.$defaultUnit;
     }
 }
 
@@ -51,11 +50,11 @@ $buttonMinWidth: $defaultUnit * 8;
     fill: var(--color-contrast-higher);
 }
 
-@each $color, $value in $themeColors {
+@each $color, $value in variables.$themeColors {
     .#{$color} {
         position: relative;
         border: 1px solid var(--color-contrast-low);
-        color: var(map-get($contrastColors, $color));
+        color: var(map-get(variables.$contrastColors, $color));
         background-color: var($value);
         transition: all 0.2s ease-in-out;
 
