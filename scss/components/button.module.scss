@@ -37,7 +37,8 @@ $buttonMinWidth: variables.$defaultUnit * 8;
     }
 }
 
-.button--withIcon {
+.hasIcon {
+    padding-left: ($buttonMinWidth - ($buttonHeight * 1.25));
     .button__text {
         padding-left: ($buttonHeight * 0.75) + variables.$defaultUnit;
     }
@@ -45,9 +46,7 @@ $buttonMinWidth: variables.$defaultUnit * 8;
 
 .button__icon {
     position: absolute;
-    width: $buttonHeight * 0.75;
-    height: $buttonHeight * 0.75;
-    fill: var(--color-contrast-higher);
+    top: ($buttonMinWidth - ($buttonHeight * 1.45));
 }
 
 @each $color, $value in variables.$themeColors {
@@ -64,6 +63,12 @@ $buttonMinWidth: variables.$defaultUnit * 8;
             border-color: var(#{$value}-light);
             background-color: var(#{$value}-light);
             transition: all 0.2s ease-in-out;
+        }
+
+        .button__icon {
+            svg {
+                fill: var(map-get(variables.$contrastColors, $color));
+            }
         }
     }
 }

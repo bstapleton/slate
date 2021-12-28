@@ -28,9 +28,9 @@ const Home: NextPage = () => {
               <CardContent>
                 Card content goes here
                 <div>
-                  <Button type={'indigo'}>Indigo button</Button>
-                  <Button type={'green'}>Green button</Button>
-                  <Button type={'green'} disabled>Disabled button</Button>
+                  <Button color={'indigo'} iconType={'arrow-right-double'}>Indigo button</Button>
+                  <Button color={'green'} iconType={'arrow-right-double'}>Green button</Button>
+                  <Button color={'green'} disabled>Disabled button</Button>
                 </div>
                 <ChipList>
                   <Chip type={'tertiary'} solid>Chippy</Chip>
