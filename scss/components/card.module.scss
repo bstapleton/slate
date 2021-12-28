@@ -10,6 +10,7 @@
     border-right-width: variables.$defaultUnit * 0.5;
     border-radius: variables.$defaultUnit;
     background-color: var(--color-bg-light);
+    color: var(--color-contrast-high);
 
     &:last-child {
         margin-bottom: 0;

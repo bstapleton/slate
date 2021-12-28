@@ -24,6 +24,7 @@
     background-color: var(--color-bg-lighter);
     transition: all 0.2s ease-in-out;
     margin: (variables.$defaultUnit * 0.5) variables.$defaultUnit 0 0;
+    color: var(--color-contrast-high);
 
     &:not(:last-child) {
         margin-right: variables.$defaultUnit;

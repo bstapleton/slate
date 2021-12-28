@@ -157,9 +157,6 @@
   @include defineColorHSL(--color-contrast-higher, 0, 0%, 100%);
 }
 
-* {
-  color: var(--color-contrast-high);
-}
 .page {
   background-color: var(--color-bg);
 }
