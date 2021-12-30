@@ -1,5 +1,4 @@
 @use '../_variables';
-@use '../mixins/grid';
 
 :root {
     font-family: 'Roboto', sans-serif;
@@ -12,9 +11,6 @@ body {
 }
 
 p,
-h1,
-h2,
-h3,
 th,
 td {
     color: var(--color-contrast-high);
@@ -23,40 +19,46 @@ td {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    color: var(--color-tertiary);
     margin: 0;
 }
 
 h1 {
     color: var(--color-primary);
-    font-weight: 200;
     text-transform: uppercase;
     letter-spacing: variables.$defaultUnit * 0.75;
-    font-size: 1.6rem;
-
-    @include grid.sm-up() {
-        font-size: 2rem;
-    }
 }
 
 h2 {
-    font-size: 1.4rem;
-    color: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 1.8em;
 }
 
 h3 {
-    font-size: 1.3rem;
+    color: var(--color-tertiary);
+    font-size: 1.6em;
+}
+
+h4,
+h5,
+h6 {
+    color: var(--color-contrast-higher);
 }
 
 h4 {
-    font-size: 1.2rem;
+    font-size: 1.4em;
 }
 
 h5 {
-    font-size: 1rem;
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1em;
 }
 
 a {
