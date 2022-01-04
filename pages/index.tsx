@@ -44,6 +44,11 @@ const Home: NextPage = () => {
                   <Chip type={'primary'}>Chippy</Chip>
                 </ChipList>
                 <Icon color={'pink'} />
+                <Icon color={'pink'} type={'arrow-down-double'} />
+                <Icon color={'pink'} type={'arrow-left-double'} />
+                <Icon color={'pink'} type={'arrow-up-double'} />
+                <Icon color={'pink'} type={'asterisk'} />
+                <Icon color={'pink'} type={'bank'} />
               </CardContent>
               <CardFooter>Footer go brrr</CardFooter>
             </Card>

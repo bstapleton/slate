@@ -2,10 +2,20 @@ import styles from '../scss/components/icon.module.scss';
 import cn from 'classnames'
 import React from "react";
 import { ArrowRightDouble } from './icons/arrow-right-double';
+import {ArrowDownDouble} from "./icons/arrow-down-double";
+import {ArrowLeftDouble} from "./icons/arrow-left-double";
+import {ArrowUpDouble} from "./icons/arrow-up-double";
+import {Asterisk} from "./icons/asterisk";
+import {Bank} from "./icons/bank";
 
 type IconProps = {
     type:
-        | 'arrow-right-double',
+        | 'arrow-down-double'
+        | 'arrow-left-double'
+        | 'arrow-right-double'
+        | 'arrow-up-double'
+        | 'asterisk'
+        | 'bank',
     color:
         | 'primary'
         | 'secondary'
@@ -31,6 +41,16 @@ type IconProps = {
 
 export function getIcon(type:string, symbolOnly:boolean) {
     switch (type) {
+        case 'arrow-down-double':
+            return <ArrowDownDouble symbolOnly={symbolOnly} />
+        case 'arrow-left-double':
+            return <ArrowLeftDouble symbolOnly={symbolOnly} />
+        case 'arrow-up-double':
+            return <ArrowUpDouble symbolOnly={symbolOnly} />
+        case 'asterisk':
+            return <Asterisk symbolOnly={symbolOnly} />
+        case 'bank':
+            return <Bank symbolOnly={symbolOnly} />
         default:
             return <ArrowRightDouble symbolOnly={symbolOnly} />
     }
