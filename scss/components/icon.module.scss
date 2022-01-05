@@ -18,7 +18,7 @@
 
         svg {
             .background {
-                fill: var(#{$value}-light);
+                fill: var(#{$value}-lighter);
             }
         }
     }
@@ -27,6 +27,26 @@
 .symbolOnly {
     .outline {
         display: none;
+    }
+}
+
+.larger {
+    width: variables.$defaultUnit * 10;
+    height: variables.$defaultUnit * 10;
+
+    svg {
+        width: variables.$defaultUnit * 10;
+        height: variables.$defaultUnit * 10;
+    }
+}
+
+.large {
+    width: variables.$defaultUnit * 6;
+    height: variables.$defaultUnit * 6;
+
+    svg {
+        width: variables.$defaultUnit * 6;
+        height: variables.$defaultUnit * 6;
     }
 }
 

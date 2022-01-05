@@ -7,6 +7,15 @@ import {ArrowLeftDouble} from "./icons/arrow-left-double";
 import {ArrowUpDouble} from "./icons/arrow-up-double";
 import {Asterisk} from "./icons/asterisk";
 import {Bank} from "./icons/bank";
+import {Bell} from "./icons/bell";
+import {Briefcase} from "./icons/briefcase";
+import {Chart} from "./icons/chart";
+import {Clock} from "./icons/clock";
+import {Cogs} from "./icons/cogs";
+import {Company} from "./icons/company";
+import {Document} from "./icons/document";
+import {Documents} from "./icons/documents";
+import {DocumentSearch} from "./icons/document-search";
 
 type IconProps = {
     type:
@@ -15,7 +24,18 @@ type IconProps = {
         | 'arrow-right-double'
         | 'arrow-up-double'
         | 'asterisk'
-        | 'bank',
+        | 'bank'
+        | 'bell'
+        | 'briefcase'
+        | 'business'
+        | 'chart'
+        | 'clock'
+        | 'cogs'
+        | 'company'
+        | 'document'
+        | 'document-search'
+        | 'documents'
+        | 'gears',
     color:
         | 'primary'
         | 'secondary'
@@ -34,6 +54,8 @@ type IconProps = {
         | 'red',
     symbolOnly: boolean,
     size:
+        | 'larger'
+        | 'large'
         | 'normal'
         | 'small'
         | 'smaller',
@@ -51,6 +73,26 @@ export function getIcon(type:string, symbolOnly:boolean) {
             return <Asterisk symbolOnly={symbolOnly} />
         case 'bank':
             return <Bank symbolOnly={symbolOnly} />
+        case 'bell':
+            return <Bell symbolOnly={symbolOnly} />
+        case 'briefcase':
+            return <Briefcase symbolOnly={symbolOnly} />
+        case 'chart':
+            return <Chart symbolOnly={symbolOnly} />
+        case 'clock':
+            return <Clock symbolOnly={symbolOnly} />
+        case 'cogs':
+        case 'gears':
+            return <Cogs symbolOnly={symbolOnly} />
+        case 'company':
+        case 'business':
+            return <Company symbolOnly={symbolOnly} />
+        case 'document':
+            return <Document symbolOnly={symbolOnly} />
+        case 'document-search':
+            return <DocumentSearch symbolOnly={symbolOnly} />
+        case 'documents':
+            return <Documents symbolOnly={symbolOnly} />
         default:
             return <ArrowRightDouble symbolOnly={symbolOnly} />
     }
@@ -60,6 +102,8 @@ export const Icon = ({ type, color, symbolOnly, size }: IconProps) => {
     return(
         <div className={cn(styles.icon, {
             [styles.symbolOnly]: symbolOnly,
+            [styles.larger]: size === 'larger',
+            [styles.large]: size === 'large',
             [styles.small]: size === 'small',
             [styles.smaller]: size === 'smaller',
             [styles.primary]: color === 'primary',

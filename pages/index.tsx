@@ -49,6 +49,15 @@ const Home: NextPage = () => {
                 <Icon color={'pink'} type={'arrow-up-double'} />
                 <Icon color={'pink'} type={'asterisk'} />
                 <Icon color={'pink'} type={'bank'} />
+                <Icon color={'pink'} type={'bell'} />
+                <Icon color={'pink'} type={'briefcase'} />
+                <Icon color={'pink'} type={'chart'} />
+                <Icon color={'pink'} type={'clock'} />
+                <Icon color={'pink'} type={'cogs'} />
+                <Icon color={'pink'} type={'company'} />
+                <Icon color={'pink'} type={'document'} />
+                <Icon color={'purple'} type={'document-search'} size={'larger'} />
+                <Icon color={'pink'} type={'documents'} size={'large'} />
               </CardContent>
               <CardFooter>Footer go brrr</CardFooter>
             </Card>
