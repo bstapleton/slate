@@ -5,19 +5,19 @@ type IconProps = {
     symbolOnly: boolean,
 }
 
-export const Briefcase = ({ symbolOnly }: IconProps) => {
+export const ArrowDownSingle = ({ symbolOnly }: IconProps) => {
     return(
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             {!symbolOnly ?
                 <Outline />
             : null}
             <g className={styles.symbol}>
-                <path d="M75,31.5H60V28a3.5,3.5,0,0,0-3.5-3.5h-13A3.5,3.5,0,0,0,40,28v3.5H25a5,5,0,0,0-5,5v30a5,5,0,0,0,5,5H75a5,5,0,0,0,5-5v-30A5,5,0,0,0,75,31.5Zm-31-3a1,1,0,0,1,1-1H55a1,1,0,0,1,1,1v3H44Zm31,38H25v-16H44v3a1,1,0,0,0,1,1H55a1,1,0,0,0,1-1v-3H75Zm0-20H25v-10H75Z"/>
+                <path d="M51.77,67.32,72.68,46.41a5,5,0,1,0-7.07-7.07L51.77,53.18a2.5,2.5,0,0,1-3.54,0L34.39,39.34a5,5,0,0,0-7.07,7.07L42.93,62h0l5.3,5.3A2.5,2.5,0,0,0,51.77,67.32Z"/>
             </g>
         </svg>
     )
 }
 
-Briefcase.defaultProps = {
+ArrowDownSingle.defaultProps = {
     symbolOnly: false,
 }

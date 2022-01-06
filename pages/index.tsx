@@ -43,21 +43,37 @@ const Home: NextPage = () => {
                   <Chip type={'secondary'} solid>Chippy</Chip>
                   <Chip type={'primary'}>Chippy</Chip>
                 </ChipList>
-                <Icon color={'pink'} />
-                <Icon color={'pink'} type={'arrow-down-double'} />
-                <Icon color={'pink'} type={'arrow-left-double'} />
-                <Icon color={'pink'} type={'arrow-up-double'} />
-                <Icon color={'pink'} type={'asterisk'} />
-                <Icon color={'pink'} type={'bank'} />
-                <Icon color={'pink'} type={'bell'} />
-                <Icon color={'pink'} type={'briefcase'} />
-                <Icon color={'pink'} type={'chart'} />
-                <Icon color={'pink'} type={'clock'} />
-                <Icon color={'pink'} type={'cogs'} />
-                <Icon color={'pink'} type={'company'} />
-                <Icon color={'pink'} type={'document'} />
-                <Icon color={'purple'} type={'document-search'} size={'larger'} />
-                <Icon color={'pink'} type={'documents'} size={'large'} />
+                <Icon type={'arrow-down-double'} />
+                <Icon color={'orange'} type={'arrow-down-single'} />
+                <Icon color={'orange'} type={'arrow-left-double'} />
+                <Icon color={'orange'} type={'arrow-left-single'} />
+                <Icon color={'orange'} type={'arrow-right-double'} />
+                <Icon color={'orange'} type={'arrow-right-single'} />
+                <Icon color={'orange'} type={'arrow-up-double'} />
+                <Icon color={'orange'} type={'arrow-up-single'} />
+                <Icon color={'orange'} type={'asterisk'} />
+                <Icon color={'orange'} type={'bank'} />
+                <Icon color={'orange'} type={'bell'} />
+                <Icon color={'orange'} type={'briefcase'} />
+                <Icon color={'orange'} type={'chart'} />
+                <Icon color={'orange'} type={'clock'} />
+                <Icon color={'orange'} type={'cogs'} />
+                <Icon color={'orange'} type={'company'} />
+                <Icon color={'orange'} type={'document'} />
+                <Icon color={'orange'} type={'document-search'} size={'larger'} />
+                <Icon color={'orange'} type={'documents'} size={'large'} />
+                <Icon color={'orange'} type={'edit'} size={'large'} />
+                <Icon color={'orange'} type={'email'} size={'large'} />
+                <Icon color={'orange'} type={'envelope'} size={'large'} />
+                <Icon color={'orange'} type={'exclamation'} size={'large'} />
+                <Icon color={'orange'} type={'grid'} size={'large'} />
+                <Icon color={'orange'} type={'horizontal-one'} size={'large'} />
+                <Icon color={'orange'} type={'horizontal-two'} size={'large'} />
+                <Icon color={'orange'} type={'horizontal-three'} size={'large'} />
+                <Icon color={'orange'} type={'money'} size={'large'} />
+                <Icon color={'orange'} type={'report'} size={'large'} />
+                <Icon color={'orange'} type={'star-full'} size={'large'} />
+                <Icon color={'orange'} type={'star-half'} size={'large'} />
               </CardContent>
               <CardFooter>Footer go brrr</CardFooter>
             </Card>

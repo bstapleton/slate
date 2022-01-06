@@ -5,19 +5,19 @@ type IconProps = {
     symbolOnly: boolean,
 }
 
-export const Briefcase = ({ symbolOnly }: IconProps) => {
+export const Envelope = ({ symbolOnly }: IconProps) => {
     return(
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             {!symbolOnly ?
                 <Outline />
             : null}
             <g className={styles.symbol}>
-                <path d="M75,31.5H60V28a3.5,3.5,0,0,0-3.5-3.5h-13A3.5,3.5,0,0,0,40,28v3.5H25a5,5,0,0,0-5,5v30a5,5,0,0,0,5,5H75a5,5,0,0,0,5-5v-30A5,5,0,0,0,75,31.5Zm-31-3a1,1,0,0,1,1-1H55a1,1,0,0,1,1,1v3H44Zm31,38H25v-16H44v3a1,1,0,0,0,1,1H55a1,1,0,0,0,1-1v-3H75Zm0-20H25v-10H75Z"/>
+                <path d="M80,30H20a5,5,0,0,0-5,5V65a5,5,0,0,0,5,5H80a5,5,0,0,0,5-5V35A5,5,0,0,0,80,30Zm-3.75,5L51.08,49.38a2.14,2.14,0,0,1-2.16,0L23.75,35ZM80,65H20V37.86L48.92,54.38a2.14,2.14,0,0,0,2.16,0L80,37.86Z"/>
             </g>
         </svg>
     )
 }
 
-Briefcase.defaultProps = {
+Envelope.defaultProps = {
     symbolOnly: false,
 }

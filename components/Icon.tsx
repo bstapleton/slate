@@ -16,13 +16,33 @@ import {Company} from "./icons/company";
 import {Document} from "./icons/document";
 import {Documents} from "./icons/documents";
 import {DocumentSearch} from "./icons/document-search";
+import {ArrowDownSingle} from "./icons/arrow-down-single";
+import {ArrowLeftSingle} from "./icons/arrow-left-single";
+import {ArrowUpSingle} from "./icons/arrow-up-single";
+import {ArrowRightSingle} from "./icons/arrow-right-single";
+import {Edit} from "./icons/edit";
+import {Email} from "./icons/email";
+import {Envelope} from "./icons/envelope";
+import {Exclamation} from "./icons/exclamation";
+import {Grid} from "./icons/grid";
+import {HorizontalOne} from "./icons/horizontal-one";
+import {HorizontalTwo} from "./icons/horizontal-two";
+import {HorizontalThree} from "./icons/horizontal-three";
+import {Money} from "./icons/money";
+import {Report} from "./icons/report";
+import {StarFull} from "./icons/star-full";
+import {StarHalf} from "./icons/star-half";
 
 type IconProps = {
     type:
         | 'arrow-down-double'
+        | 'arrow-down-single'
         | 'arrow-left-double'
+        | 'arrow-left-single'
         | 'arrow-right-double'
+        | 'arrow-right-single'
         | 'arrow-up-double'
+        | 'arrow-up-single'
         | 'asterisk'
         | 'bank'
         | 'bell'
@@ -35,7 +55,18 @@ type IconProps = {
         | 'document'
         | 'document-search'
         | 'documents'
-        | 'gears',
+        | 'edit'
+        | 'email'
+        | 'envelope'
+        | 'exclamation'
+        | 'grid'
+        | 'horizontal-one'
+        | 'horizontal-two'
+        | 'horizontal-three'
+        | 'money'
+        | 'report'
+        | 'star-full'
+        | 'star-half',
     color:
         | 'primary'
         | 'secondary'
@@ -65,10 +96,20 @@ export function getIcon(type:string, symbolOnly:boolean) {
     switch (type) {
         case 'arrow-down-double':
             return <ArrowDownDouble symbolOnly={symbolOnly} />
+        case 'arrow-down-single':
+            return <ArrowDownSingle symbolOnly={symbolOnly} />
         case 'arrow-left-double':
             return <ArrowLeftDouble symbolOnly={symbolOnly} />
+        case 'arrow-left-single':
+            return <ArrowLeftSingle symbolOnly={symbolOnly} />
+        case 'arrow-right-double':
+            return <ArrowRightDouble symbolOnly={symbolOnly} />
+        case 'arrow-right-single':
+            return <ArrowRightSingle symbolOnly={symbolOnly} />
         case 'arrow-up-double':
             return <ArrowUpDouble symbolOnly={symbolOnly} />
+        case 'arrow-up-single':
+            return <ArrowUpSingle symbolOnly={symbolOnly} />
         case 'asterisk':
             return <Asterisk symbolOnly={symbolOnly} />
         case 'bank':
@@ -93,8 +134,30 @@ export function getIcon(type:string, symbolOnly:boolean) {
             return <DocumentSearch symbolOnly={symbolOnly} />
         case 'documents':
             return <Documents symbolOnly={symbolOnly} />
-        default:
-            return <ArrowRightDouble symbolOnly={symbolOnly} />
+        case 'edit':
+            return <Edit symbolOnly={symbolOnly} />
+        case 'email':
+            return <Email symbolOnly={symbolOnly} />
+        case 'envelope':
+            return <Envelope symbolOnly={symbolOnly} />
+        case 'exclamation':
+            return <Exclamation symbolOnly={symbolOnly} />
+        case 'grid':
+            return <Grid symbolOnly={symbolOnly} />
+        case 'horizontal-one':
+            return <HorizontalOne symbolOnly={symbolOnly} />
+        case 'horizontal-two':
+            return <HorizontalTwo symbolOnly={symbolOnly} />
+        case 'horizontal-three':
+            return <HorizontalThree symbolOnly={symbolOnly} />
+        case 'money':
+            return <Money symbolOnly={symbolOnly} />
+        case 'report':
+            return <Report symbolOnly={symbolOnly} />
+        case 'star-full':
+            return <StarFull symbolOnly={symbolOnly} />
+        case 'star-half':
+            return <StarHalf symbolOnly={symbolOnly} />
     }
 }
 
@@ -128,7 +191,6 @@ export const Icon = ({ type, color, symbolOnly, size }: IconProps) => {
 }
 
 Icon.defaultProps = {
-    type: 'arrow-right-double',
     color: 'primary',
     symbolOnly: false,
     size: 'normal'
