@@ -70,7 +70,22 @@ const Home: NextPage = () => {
                 <Icon color={'orange'} type={'horizontal-one'} size={'large'} />
                 <Icon color={'orange'} type={'horizontal-two'} size={'large'} />
                 <Icon color={'orange'} type={'horizontal-three'} size={'large'} />
+                <Icon color={'orange'} type={'house'} size={'large'} />
+                <Icon color={'orange'} type={'identity'} size={'large'} />
+                <Icon color={'orange'} type={'info'} size={'large'} />
+                <Icon color={'orange'} type={'list'} size={'large'} />
+                <Icon color={'orange'} type={'lock'} size={'large'} />
+                <Icon color={'orange'} type={'logout'} size={'large'} />
                 <Icon color={'orange'} type={'money'} size={'large'} />
+                <Icon color={'orange'} type={'person'} size={'large'} />
+                <Icon color={'orange'} type={'phone'} size={'large'} />
+                <Icon color={'orange'} type={'pip-one'} size={'large'} />
+                <Icon color={'orange'} type={'pip-two'} size={'large'} />
+                <Icon color={'orange'} type={'pip-three'} size={'large'} />
+                <Icon color={'orange'} type={'plus'} size={'large'} />
+                <Icon color={'orange'} type={'post'} size={'large'} />
+                <Icon color={'orange'} type={'question'} size={'large'} />
+                <Icon color={'orange'} type={'renew'} size={'large'} />
                 <Icon color={'orange'} type={'report'} size={'large'} />
                 <Icon color={'orange'} type={'star-full'} size={'large'} />
                 <Icon color={'orange'} type={'star-half'} size={'large'} />

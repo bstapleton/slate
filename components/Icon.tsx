@@ -32,6 +32,21 @@ import {Money} from "./icons/money";
 import {Report} from "./icons/report";
 import {StarFull} from "./icons/star-full";
 import {StarHalf} from "./icons/star-half";
+import {House} from "./icons/house";
+import {Identity} from "./icons/identity";
+import {Info} from "./icons/info";
+import {List} from "./icons/list";
+import {Lock} from "./icons/lock";
+import {Logout} from "./icons/logout";
+import {Person} from "./icons/person";
+import {Phone} from "./icons/phone";
+import {PipOne} from "./icons/pip-one";
+import {PipThree} from "./icons/pip-three";
+import {PipTwo} from "./icons/pip-two";
+import {Plus} from "./icons/plus";
+import {Post} from "./icons/post";
+import {Question} from "./icons/question";
+import {Renew} from "./icons/renew";
 
 type IconProps = {
     type:
@@ -58,12 +73,30 @@ type IconProps = {
         | 'edit'
         | 'email'
         | 'envelope'
+        | 'equals'
         | 'exclamation'
+        | 'exit'
         | 'grid'
         | 'horizontal-one'
-        | 'horizontal-two'
         | 'horizontal-three'
+        | 'horizontal-two'
+        | 'house'
+        | 'identity'
+        | 'info'
+        | 'letter'
+        | 'list'
+        | 'lock'
+        | 'logout'
         | 'money'
+        | 'person'
+        | 'phone'
+        | 'pip-one'
+        | 'pip-three'
+        | 'pip-two'
+        | 'plus'
+        | 'post'
+        | 'question'
+        | 'renew'
         | 'report'
         | 'star-full'
         | 'star-half',
@@ -146,12 +179,45 @@ export function getIcon(type:string, symbolOnly:boolean) {
             return <Grid symbolOnly={symbolOnly} />
         case 'horizontal-one':
             return <HorizontalOne symbolOnly={symbolOnly} />
-        case 'horizontal-two':
-            return <HorizontalTwo symbolOnly={symbolOnly} />
         case 'horizontal-three':
             return <HorizontalThree symbolOnly={symbolOnly} />
+        case 'horizontal-two':
+        case 'equals':
+            return <HorizontalTwo symbolOnly={symbolOnly} />
+        case 'house':
+            return <House symbolOnly={symbolOnly} />
+        case 'identity':
+            return <Identity symbolOnly={symbolOnly} />
+        case 'info':
+            return <Info symbolOnly={symbolOnly} />
+        case 'list':
+            return <List symbolOnly={symbolOnly} />
+        case 'lock':
+            return <Lock symbolOnly={symbolOnly} />
+        case 'logout':
+        case 'exit':
+            return <Logout symbolOnly={symbolOnly} />
         case 'money':
             return <Money symbolOnly={symbolOnly} />
+        case 'person':
+            return <Person symbolOnly={symbolOnly} />
+        case 'phone':
+            return <Phone symbolOnly={symbolOnly} />
+        case 'pip-one':
+            return <PipOne symbolOnly={symbolOnly} />
+        case 'pip-three':
+            return <PipThree symbolOnly={symbolOnly} />
+        case 'pip-two':
+            return <PipTwo symbolOnly={symbolOnly} />
+        case 'plus':
+            return <Plus symbolOnly={symbolOnly} />
+        case 'post':
+        case 'letter':
+            return <Post symbolOnly={symbolOnly} />
+        case 'question':
+            return <Question symbolOnly={symbolOnly} />
+        case 'renew':
+            return <Renew symbolOnly={symbolOnly} />
         case 'report':
             return <Report symbolOnly={symbolOnly} />
         case 'star-full':
