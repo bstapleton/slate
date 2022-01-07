@@ -1,0 +1,17 @@
+export enum Colors {
+    Primary,
+    Secondary,
+    Tertiary,
+    Black,
+    White,
+    Orange,
+    Yellow,
+    Green,
+    Teal,
+    Cyan,
+    Blue,
+    Indigo,
+    Purple,
+    Pink,
+    Red,
+}

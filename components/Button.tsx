@@ -2,53 +2,42 @@ import {FC, Fragment} from 'react'
 import styles from '../scss/components/button.module.scss'
 import cn from 'classnames'
 import {Icon} from "./Icon";
+import {Colors} from "../data/colors";
+import {Scales} from "../data/scales";
+import {Icons} from "../data/icons";
 
 type ButtonProps = {
-    iconType?:
-        | 'arrow-right-double',
-    color:
-        | 'primary'
-        | 'secondary'
-        | 'tertiary'
-        | 'black'
-        | 'white'
-        | 'orange'
-        | 'yellow'
-        | 'green'
-        | 'teal'
-        | 'cyan'
-        | 'blue'
-        | 'indigo'
-        | 'purple'
-        | 'pink'
-        | 'red',
+    iconType?: Icons,
+    color: Colors
     disabled?: boolean,
 }
+
+
 
 const Button: FC<ButtonProps> = ({ color, disabled, iconType, children }) =>
     <div className={cn(styles.button, {
         [styles.hasIcon]: iconType,
         [styles.disabled]: disabled,
-        [styles.primary]: color === 'primary',
-        [styles.secondary]: color === 'secondary',
-        [styles.tertiary]: color === 'tertiary',
-        [styles.black]: color === 'black',
-        [styles.white]: color === 'white',
-        [styles.orange]: color === 'orange',
-        [styles.yellow]: color === 'yellow',
-        [styles.green]: color === 'green',
-        [styles.teal]: color === 'teal',
-        [styles.cyan]: color === 'cyan',
-        [styles.blue]: color === 'blue',
-        [styles.indigo]: color === 'indigo',
-        [styles.purple]: color === 'purple',
-        [styles.pink]: color === 'pink',
-        [styles.red]: color === 'red',
+        [styles.primary]: color === Colors.Primary,
+        [styles.secondary]: color === Colors.Secondary,
+        [styles.tertiary]: color === Colors.Tertiary,
+        [styles.black]: color === Colors.Black,
+        [styles.white]: color === Colors.White,
+        [styles.orange]: color === Colors.Orange,
+        [styles.yellow]: color === Colors.Yellow,
+        [styles.green]: color === Colors.Green,
+        [styles.teal]: color === Colors.Teal,
+        [styles.cyan]: color === Colors.Cyan,
+        [styles.blue]: color === Colors.Blue,
+        [styles.indigo]: color === Colors.Indigo,
+        [styles.purple]: color === Colors.Purple,
+        [styles.pink]: color === Colors.Pink,
+        [styles.red]: color === Colors.Red,
     })}>
         {iconType ?
             <Fragment>
                 <div className={styles.button__icon}>
-                    <Icon type={iconType} size={'small'} />
+                    <Icon type={iconType} size={Scales.Small} />
                 </div>
                 <div className={styles.button__text}>
                     {children}

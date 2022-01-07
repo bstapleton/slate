@@ -1,12 +1,13 @@
-import type { NextPage } from 'next'
-import { Fragment } from 'react';
+import type {NextPage} from 'next'
+import {Fragment} from 'react';
 import Head from 'next/head'
-import Image from 'next/image'
-import Card, { CardHeader, CardContent, CardFooter } from "../components/Card";
-import Table from "../components/Table";
+import Card, {CardContent, CardFooter, CardHeader} from "../components/Card";
 import Chip, {ChipList} from "../components/Chip";
 import Button from '../components/Button';
 import {Icon} from "../components/Icon";
+import {Scales} from "../data/scales";
+import {Colors} from "../data/colors";
+import {Icons} from "../data/icons";
 
 const Home: NextPage = () => {
   return (
@@ -27,68 +28,79 @@ const Home: NextPage = () => {
             <h5>Heading 5</h5>
             <h6>Heading 6</h6>
             <Card
-                type={'primary'}
+                color={Colors.Primary}
                 flex={true}
             >
               <CardHeader heading={'Hello there'} />
               <CardContent>
                 Card content goes here
                 <div>
-                  <Button color={'indigo'} iconType={'arrow-right-double'}>Indigo button</Button>
-                  <Button color={'green'} iconType={'arrow-right-double'}>Green button</Button>
-                  <Button color={'green'} disabled>Disabled button</Button>
+                  <Button color={Colors.Indigo} iconType={Icons.HorizontalOne}>Indigo button</Button>
+                  <Button color={Colors.Green} iconType={Icons.Tick}>Green button</Button>
+                  <Button color={Colors.Green} disabled>Disabled button</Button>
                 </div>
                 <ChipList>
-                  <Chip type={'tertiary'} solid>Chippy</Chip>
-                  <Chip type={'secondary'} solid>Chippy</Chip>
-                  <Chip type={'primary'}>Chippy</Chip>
+                  <Chip color={Colors.Tertiary} solid>Chippy</Chip>
+                  <Chip color={Colors.Secondary} solid>Chippy</Chip>
+                  <Chip color={Colors.Primary}>Chippy</Chip>
                 </ChipList>
-                <Icon type={'arrow-down-double'} />
-                <Icon color={'orange'} type={'arrow-down-single'} />
-                <Icon color={'orange'} type={'arrow-left-double'} />
-                <Icon color={'orange'} type={'arrow-left-single'} />
-                <Icon color={'orange'} type={'arrow-right-double'} />
-                <Icon color={'orange'} type={'arrow-right-single'} />
-                <Icon color={'orange'} type={'arrow-up-double'} />
-                <Icon color={'orange'} type={'arrow-up-single'} />
-                <Icon color={'orange'} type={'asterisk'} />
-                <Icon color={'orange'} type={'bank'} />
-                <Icon color={'orange'} type={'bell'} />
-                <Icon color={'orange'} type={'briefcase'} />
-                <Icon color={'orange'} type={'chart'} />
-                <Icon color={'orange'} type={'clock'} />
-                <Icon color={'orange'} type={'cogs'} />
-                <Icon color={'orange'} type={'company'} />
-                <Icon color={'orange'} type={'document'} />
-                <Icon color={'orange'} type={'document-search'} size={'larger'} />
-                <Icon color={'orange'} type={'documents'} size={'large'} />
-                <Icon color={'orange'} type={'edit'} size={'large'} />
-                <Icon color={'orange'} type={'email'} size={'large'} />
-                <Icon color={'orange'} type={'envelope'} size={'large'} />
-                <Icon color={'orange'} type={'exclamation'} size={'large'} />
-                <Icon color={'orange'} type={'grid'} size={'large'} />
-                <Icon color={'orange'} type={'horizontal-one'} size={'large'} />
-                <Icon color={'orange'} type={'horizontal-two'} size={'large'} />
-                <Icon color={'orange'} type={'horizontal-three'} size={'large'} />
-                <Icon color={'orange'} type={'house'} size={'large'} />
-                <Icon color={'orange'} type={'identity'} size={'large'} />
-                <Icon color={'orange'} type={'info'} size={'large'} />
-                <Icon color={'orange'} type={'list'} size={'large'} />
-                <Icon color={'orange'} type={'lock'} size={'large'} />
-                <Icon color={'orange'} type={'logout'} size={'large'} />
-                <Icon color={'orange'} type={'money'} size={'large'} />
-                <Icon color={'orange'} type={'person'} size={'large'} />
-                <Icon color={'orange'} type={'phone'} size={'large'} />
-                <Icon color={'orange'} type={'pip-one'} size={'large'} />
-                <Icon color={'orange'} type={'pip-two'} size={'large'} />
-                <Icon color={'orange'} type={'pip-three'} size={'large'} />
-                <Icon color={'orange'} type={'plus'} size={'large'} />
-                <Icon color={'orange'} type={'post'} size={'large'} />
-                <Icon color={'orange'} type={'question'} size={'large'} />
-                <Icon color={'orange'} type={'renew'} size={'large'} />
-                <Icon color={'orange'} type={'report'} size={'large'} />
-                <Icon color={'orange'} type={'star-full'} size={'large'} />
-                <Icon color={'orange'} type={'star-half'} size={'large'} />
+                <Icon type={Icons.ArrowDownDouble} />
+                <Icon color={Colors.Orange} type={Icons.ArrowDownSingle} />
+                <Icon color={Colors.Orange} type={Icons.ArrowLeftDouble} />
+                <Icon color={Colors.Orange} type={Icons.ArrowLeftSingle} />
+                <Icon color={Colors.Orange} type={Icons.ArrowRightDouble} />
+                <Icon color={Colors.Orange} type={Icons.ArrowRightSingle} />
+                <Icon color={Colors.Orange} type={Icons.ArrowUpDouble} />
+                <Icon color={Colors.Orange} type={Icons.ArrowUpSingle} />
+                <Icon color={Colors.Orange} type={Icons.Asterisk} />
+                <Icon color={Colors.Orange} type={Icons.Bank} />
+                <Icon color={Colors.Orange} type={Icons.Bell} />
+                <Icon color={Colors.Orange} type={Icons.Briefcase} />
+                <Icon color={Colors.Orange} type={Icons.Chart} />
+                <Icon color={Colors.Orange} type={Icons.Clock} />
+                <Icon color={Colors.Orange} type={Icons.Cogs} />
+                <Icon color={Colors.Orange} type={Icons.Company} />
+                <Icon color={Colors.Orange} type={Icons.Document} />
+                <Icon color={Colors.Orange} type={Icons.DocumentSearch} size={Scales.Larger} />
+                <Icon color={Colors.Orange} type={Icons.Documents} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Exit} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Email} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Envelope} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Exclamation} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.FaceHappy} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.FaceUnhappy} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Grid} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.HorizontalOne} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.HorizontalTwo} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.HorizontalThree} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.House} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Identity} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Info} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.List} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Lock} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Logout} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Money} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Person} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Phone} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.PipOne} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.PipTwo} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.PipThree} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Plus} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Post} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Question} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Renew} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Report} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Restart} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Search} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Sms} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.StarFull} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.StarHalf} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Tick} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Timer} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.Times} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.VerticalOne} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.VerticalTwo} size={Scales.Large} />
+                <Icon color={Colors.Orange} type={Icons.VerticalThree} size={Scales.Large} />
               </CardContent>
               <CardFooter>Footer go brrr</CardFooter>
             </Card>

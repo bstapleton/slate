@@ -58,217 +58,140 @@ import {VerticalOne} from "./icons/vertical-one";
 import {VerticalTwo} from "./icons/vertical-two";
 import {VerticalThree} from "./icons/vertical-three";
 import {Times} from "./icons/times";
-import {Scale} from "../data/scale";
+import {Scales} from "../data/scales";
+import {Colors} from "../data/colors";
+import {Icons} from "../data/icons";
 
 type IconProps = {
-    type:
-        | 'arrow-down-double'
-        | 'arrow-down-single'
-        | 'arrow-left-double'
-        | 'arrow-left-single'
-        | 'arrow-right-double'
-        | 'arrow-right-single'
-        | 'arrow-up-double'
-        | 'arrow-up-single'
-        | 'asterisk'
-        | 'bank'
-        | 'bell'
-        | 'briefcase'
-        | 'business'
-        | 'chart'
-        | 'check'
-        | 'clock'
-        | 'cogs'
-        | 'company'
-        | 'document'
-        | 'document-search'
-        | 'documents'
-        | 'edit'
-        | 'email'
-        | 'envelope'
-        | 'equals'
-        | 'exclamation'
-        | 'exit'
-        | 'face-happy'
-        | 'face-unhappy'
-        | 'grid'
-        | 'horizontal-one'
-        | 'horizontal-three'
-        | 'horizontal-two'
-        | 'house'
-        | 'identity'
-        | 'info'
-        | 'letter'
-        | 'list'
-        | 'lock'
-        | 'logout'
-        | 'money'
-        | 'pause'
-        | 'person'
-        | 'phone'
-        | 'pip-one'
-        | 'pip-three'
-        | 'pip-two'
-        | 'plus'
-        | 'post'
-        | 'question'
-        | 'renew'
-        | 'report'
-        | 'restart'
-        | 'search'
-        | 'sms'
-        | 'standby'
-        | 'star-full'
-        | 'star-half'
-        | 'tick'
-        | 'timer'
-        | 'times'
-        | 'vertical-one'
-        | 'vertical-three'
-        | 'vertical-two',
-    color:
-        | 'primary'
-        | 'secondary'
-        | 'tertiary'
-        | 'black'
-        | 'white'
-        | 'orange'
-        | 'yellow'
-        | 'green'
-        | 'teal'
-        | 'cyan'
-        | 'blue'
-        | 'indigo'
-        | 'purple'
-        | 'pink'
-        | 'red',
+    type: Icons
+    color: Colors
     symbolOnly: boolean,
-    size: Scale
+    size: Scales
 }
 
-export function getIcon(type:string, symbolOnly:boolean) {
+export function getIcon(type:Icons, symbolOnly:boolean) {
     switch (type) {
-        case 'arrow-down-double':
+        case Icons.ArrowDownDouble:
             return <ArrowDownDouble symbolOnly={symbolOnly} />
-        case 'arrow-down-single':
+        case Icons.ArrowDownSingle:
             return <ArrowDownSingle symbolOnly={symbolOnly} />
-        case 'arrow-left-double':
+        case Icons.ArrowLeftDouble:
             return <ArrowLeftDouble symbolOnly={symbolOnly} />
-        case 'arrow-left-single':
+        case Icons.ArrowLeftSingle:
             return <ArrowLeftSingle symbolOnly={symbolOnly} />
-        case 'arrow-right-double':
+        case Icons.ArrowRightDouble:
             return <ArrowRightDouble symbolOnly={symbolOnly} />
-        case 'arrow-right-single':
+        case Icons.ArrowRightSingle:
             return <ArrowRightSingle symbolOnly={symbolOnly} />
-        case 'arrow-up-double':
+        case Icons.ArrowUpDouble:
             return <ArrowUpDouble symbolOnly={symbolOnly} />
-        case 'arrow-up-single':
+        case Icons.ArrowUpSingle:
             return <ArrowUpSingle symbolOnly={symbolOnly} />
-        case 'asterisk':
+        case Icons.Asterisk:
             return <Asterisk symbolOnly={symbolOnly} />
-        case 'bank':
+        case Icons.Bank:
             return <Bank symbolOnly={symbolOnly} />
-        case 'bell':
+        case Icons.Bell:
             return <Bell symbolOnly={symbolOnly} />
-        case 'briefcase':
+        case Icons.Briefcase:
             return <Briefcase symbolOnly={symbolOnly} />
-        case 'chart':
+        case Icons.Chart:
             return <Chart symbolOnly={symbolOnly} />
-        case 'clock':
+        case Icons.Clock:
             return <Clock symbolOnly={symbolOnly} />
-        case 'cogs':
-        case 'gears':
+        case Icons.Cogs:
+        case Icons.Gears:
             return <Cogs symbolOnly={symbolOnly} />
-        case 'company':
-        case 'business':
+        case Icons.Company:
+        case Icons.Business:
             return <Company symbolOnly={symbolOnly} />
-        case 'document':
+        case Icons.Document:
             return <Document symbolOnly={symbolOnly} />
-        case 'document-search':
+        case Icons.DocumentSearch:
             return <DocumentSearch symbolOnly={symbolOnly} />
-        case 'documents':
+        case Icons.Documents:
             return <Documents symbolOnly={symbolOnly} />
-        case 'edit':
+        case Icons.Edit:
             return <Edit symbolOnly={symbolOnly} />
-        case 'email':
+        case Icons.Email:
             return <Email symbolOnly={symbolOnly} />
-        case 'envelope':
+        case Icons.Envelope:
             return <Envelope symbolOnly={symbolOnly} />
-        case 'exclamation':
+        case Icons.Exclamation:
             return <Exclamation symbolOnly={symbolOnly} />
-        case 'face-happy':
+        case Icons.FaceHappy:
             return <FaceHappy symbolOnly={symbolOnly} />
-        case 'face-unhappy':
+        case Icons.FaceUnhappy:
             return <FaceUnhappy symbolOnly={symbolOnly} />
-        case 'grid':
+        case Icons.Grid:
             return <Grid symbolOnly={symbolOnly} />
-        case 'horizontal-one':
+        case Icons.HorizontalOne:
             return <HorizontalOne symbolOnly={symbolOnly} />
-        case 'horizontal-three':
+        case Icons.HorizontalThree:
             return <HorizontalThree symbolOnly={symbolOnly} />
-        case 'horizontal-two':
-        case 'equals':
+        case Icons.HorizontalTwo:
+        case Icons.Equals:
             return <HorizontalTwo symbolOnly={symbolOnly} />
-        case 'house':
+        case Icons.House:
             return <House symbolOnly={symbolOnly} />
-        case 'identity':
+        case Icons.Identity:
             return <Identity symbolOnly={symbolOnly} />
-        case 'info':
+        case Icons.Info:
             return <Info symbolOnly={symbolOnly} />
-        case 'list':
+        case Icons.List:
             return <List symbolOnly={symbolOnly} />
-        case 'lock':
+        case Icons.Lock:
             return <Lock symbolOnly={symbolOnly} />
-        case 'logout':
-        case 'exit':
+        case Icons.Logout:
+        case Icons.Exit:
             return <Logout symbolOnly={symbolOnly} />
-        case 'money':
+        case Icons.Money:
             return <Money symbolOnly={symbolOnly} />
-        case 'person':
+        case Icons.Person:
             return <Person symbolOnly={symbolOnly} />
-        case 'phone':
+        case Icons.Phone:
             return <Phone symbolOnly={symbolOnly} />
-        case 'pip-one':
+        case Icons.PipOne:
             return <PipOne symbolOnly={symbolOnly} />
-        case 'pip-three':
+        case Icons.PipThree:
             return <PipThree symbolOnly={symbolOnly} />
-        case 'pip-two':
+        case Icons.PipTwo:
             return <PipTwo symbolOnly={symbolOnly} />
-        case 'plus':
+        case Icons.Plus:
             return <Plus symbolOnly={symbolOnly} />
-        case 'post':
-        case 'letter':
+        case Icons.Post:
+        case Icons.Letter:
             return <Post symbolOnly={symbolOnly} />
-        case 'question':
+        case Icons.Question:
             return <Question symbolOnly={symbolOnly} />
-        case 'renew':
+        case Icons.Renew:
             return <Renew symbolOnly={symbolOnly} />
-        case 'report':
+        case Icons.Report:
             return <Report symbolOnly={symbolOnly} />
-        case 'restart':
+        case Icons.Restart:
             return <Restart symbolOnly={symbolOnly} />
-        case 'search':
+        case Icons.Search:
             return <Search symbolOnly={symbolOnly} />
-        case 'sms':
+        case Icons.Sms:
             return <Sms symbolOnly={symbolOnly} />
-        case 'star-full':
+        case Icons.StarFull:
             return <StarFull symbolOnly={symbolOnly} />
-        case 'star-half':
+        case Icons.StarHalf:
             return <StarHalf symbolOnly={symbolOnly} />
-        case 'tick':
-        case 'check':
+        case Icons.Tick:
+        case Icons.Check:
             return <Tick symbolOnly={symbolOnly} />
-        case 'timer':
+        case Icons.Timer:
             return <Timer symbolOnly={symbolOnly} />
-        case 'times':
+        case Icons.Times:
             return <Times symbolOnly={symbolOnly} />
-        case 'vertical-one':
-        case 'standby':
+        case Icons.VerticalOne:
+        case Icons.Standby:
             return <VerticalOne symbolOnly={symbolOnly} />
-        case 'vertical-three':
+        case Icons.VerticalThree:
             return <VerticalThree symbolOnly={symbolOnly} />
-        case 'vertical-two':
-        case 'pause':
+        case Icons.VerticalTwo:
+        case Icons.Pause:
             return <VerticalTwo symbolOnly={symbolOnly} />
     }
 }
@@ -277,25 +200,25 @@ export const Icon = ({ type, color, symbolOnly, size }: IconProps) => {
     return(
         <div className={cn(styles.icon, {
             [styles.symbolOnly]: symbolOnly,
-            [styles.larger]: size === Scale.Larger,
-            [styles.large]: size === Scale.Large,
-            [styles.small]: size === Scale.Small,
-            [styles.smaller]: size === Scale.Smaller,
-            [styles.primary]: color === 'primary',
-            [styles.secondary]: color === 'secondary',
-            [styles.tertiary]: color === 'tertiary',
-            [styles.black]: color === 'black',
-            [styles.white]: color === 'white',
-            [styles.orange]: color === 'orange',
-            [styles.yellow]: color === 'yellow',
-            [styles.green]: color === 'green',
-            [styles.teal]: color === 'teal',
-            [styles.cyan]: color === 'cyan',
-            [styles.blue]: color === 'blue',
-            [styles.indigo]: color === 'indigo',
-            [styles.purple]: color === 'purple',
-            [styles.pink]: color === 'pink',
-            [styles.red]: color === 'red',
+            [styles.larger]: size === Scales.Larger,
+            [styles.large]: size === Scales.Large,
+            [styles.small]: size === Scales.Small,
+            [styles.smaller]: size === Scales.Smaller,
+            [styles.primary]: color === Colors.Primary,
+            [styles.secondary]: color === Colors.Secondary,
+            [styles.tertiary]: color === Colors.Tertiary,
+            [styles.black]: color === Colors.Black,
+            [styles.white]: color === Colors.White,
+            [styles.orange]: color === Colors.Orange,
+            [styles.yellow]: color === Colors.Yellow,
+            [styles.green]: color === Colors.Green,
+            [styles.teal]: color === Colors.Teal,
+            [styles.cyan]: color === Colors.Cyan,
+            [styles.blue]: color === Colors.Blue,
+            [styles.indigo]: color === Colors.Indigo,
+            [styles.purple]: color === Colors.Purple,
+            [styles.pink]: color === Colors.Pink,
+            [styles.red]: color === Colors.Red,
         })}>
             {getIcon(type, symbolOnly)}
         </div>
@@ -303,7 +226,7 @@ export const Icon = ({ type, color, symbolOnly, size }: IconProps) => {
 }
 
 Icon.defaultProps = {
-    color: 'primary',
+    color: Colors.Primary,
     symbolOnly: false,
-    size: 'normal'
+    size: Scales.Normal
 }
