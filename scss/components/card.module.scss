@@ -65,18 +65,6 @@
     }
 }
 
-// TODO: is this needed anymore?
-.flex {
-    > * {
-        padding: variables.$defaultUnit * 2;
-        padding-right: variables.$defaultUnit;
-    }
-
-    > :last-child {
-        padding-right: variables.$defaultUnit * 2;
-    }
-}
-
 @each $color, $value in variables.$themeColors {
     .#{$color} {
         border-left-color: var($value);

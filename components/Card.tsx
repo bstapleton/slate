@@ -5,7 +5,6 @@ import {Colors} from "../data/colors";
 
 type CardProps = {
     color: Colors
-    flex?: boolean
 }
 
 type HeaderProps = {
@@ -30,10 +29,8 @@ export const CardFooter: FC = ({ children }) =>
 
 const Card: FC<CardProps> = ({
     color,
-    flex,
     children }) =>
 <div className={cn(styles.card, {
-    [styles.flex]: flex,
     [styles.primary]: color === Colors.Primary,
     [styles.secondary]: color === Colors.Secondary,
     [styles.tertiary]: color === Colors.Tertiary,
