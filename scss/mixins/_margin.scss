@@ -1,6 +1,8 @@
+@use '../variables';
+
 @mixin margin($breakpoint: false) {
     @if $breakpoint {
-        @each $dimension in $dimensions {
+        @each $dimension in variables.$dimensions {
             @if $dimension == 'all' {
                 .#{$breakpoint}\:margin\:none {
                     margin: 0;
@@ -14,42 +16,42 @@
 
             @if $dimension == 'all' {
                 .#{$breakpoint}\:margin\:quarter {
-                    margin: calc(#{$defaultUnit} * 0.25);
+                    margin: calc(#{variables.$defaultUnit} * 0.25);
                 }
             }
             @else {
                 .#{$breakpoint}\:margin\:#{$dimension}\:quarter {
-                    margin-#{$dimension}: calc(#{$defaultUnit} * 0.25);
+                    margin-#{$dimension}: calc(#{variables.$defaultUnit} * 0.25);
                 }
             }
 
             @if $dimension == 'all' {
                 .#{$breakpoint}\:margin\:half {
-                    margin: calc(#{$defaultUnit} * 0.5);
+                    margin: calc(#{variables.$defaultUnit} * 0.5);
                 }
             }
             @else {
                 .#{$breakpoint}\:margin\:#{$dimension}\:half {
-                    margin-#{$dimension}: calc(#{$defaultUnit} * 0.5);
+                    margin-#{$dimension}: calc(#{variables.$defaultUnit} * 0.5);
                 }
             }
 
             @for $i from 1 through 8 {
                 @if $dimension == 'all' {
                     .#{$breakpoint}\:margin\:#{$i}x {
-                        margin: calc(#{$defaultUnit} * #{$i});
+                        margin: calc(#{variables.$defaultUnit} * #{$i});
                     }
                 }
                 @else {
                     .#{$breakpoint}\:margin\:#{$dimension}\:#{$i}x {
-                        margin-#{$dimension}: calc(#{$defaultUnit} * #{$i});
+                        margin-#{$dimension}: calc(#{variables.$defaultUnit} * #{$i});
                     }
                 }
             }
         }
     }
     @else {
-        @each $dimension in $dimensions {
+        @each $dimension in variables.$dimensions {
             @if $dimension == 'all' {
                 .margin\:none {
                     margin: 0;
@@ -63,35 +65,35 @@
 
             @if $dimension == 'all' {
                 .margin\:quarter {
-                    margin: calc(#{$defaultUnit} * 0.25);
+                    margin: calc(#{variables.$defaultUnit} * 0.25);
                 }
             }
             @else {
                 .margin\:#{$dimension}\:quarter {
-                    margin-#{$dimension}: calc(#{$defaultUnit} * 0.25);
+                    margin-#{$dimension}: calc(#{variables.$defaultUnit} * 0.25);
                 }
             }
 
             @if $dimension == 'all' {
                 .margin\:half {
-                    margin: calc(#{$defaultUnit} * 0.5);
+                    margin: calc(#{variables.$defaultUnit} * 0.5);
                 }
             }
             @else {
                 .margin\:#{$dimension}\:half {
-                    margin-#{$dimension}: calc(#{$defaultUnit} * 0.5);
+                    margin-#{$dimension}: calc(#{variables.$defaultUnit} * 0.5);
                 }
             }
 
             @for $i from 1 through 8 {
                 @if $dimension == 'all' {
                     .margin\:#{$i}x {
-                        margin: calc(#{$defaultUnit} * #{$i});
+                        margin: calc(#{variables.$defaultUnit} * #{$i});
                     }
                 }
                 @else {
                     .margin\:#{$dimension}\:#{$i}x {
-                        margin-#{$dimension}: calc(#{$defaultUnit} * #{$i});
+                        margin-#{$dimension}: calc(#{variables.$defaultUnit} * #{$i});
                     }
                 }
             }

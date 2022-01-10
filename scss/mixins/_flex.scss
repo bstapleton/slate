@@ -1,3 +1,5 @@
+@use '../variables';
+
 @mixin flex {
     display: -webkit-box;
     display: -webkit-flex;
@@ -21,7 +23,7 @@
 
 @mixin flex-direction($breakpoint: false) {
     @if $breakpoint {
-        @each $direction in $flexDirections {
+        @each $direction in variables.$flexDirections {
             .#{$breakpoint}\:flex-#{$direction} {
                 @include flex;
                 flex-direction: #{$direction};
@@ -29,7 +31,7 @@
         }
     }
     @else {
-        @each $direction in $flexDirections {
+        @each $direction in variables.$flexDirections {
             .flex-#{$direction} {
                 @include flex;
                 flex-direction: #{$direction};

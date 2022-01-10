@@ -21,137 +21,137 @@
 
 @keyframes button-hover {
     0% {
-        border-top-color: $success;
-        border-right-color: $white;
-        border-bottom-color: $white;
-        border-left-color: $white;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-white);
+        border-bottom-color: var(--color-white);
+        border-left-color: var(--color-white);
     }
     20% {
-        border-top-color: $success;
-        border-right-color: $white;
-        border-bottom-color: $white;
-        border-left-color: $white;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-white);
+        border-bottom-color: var(--color-white);
+        border-left-color: var(--color-white);
     }
     40% {
-        border-top-color: $success;
-        border-right-color: $white;
-        border-bottom-color: $white;
-        border-left-color: $white;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-white);
+        border-bottom-color: var(--color-white);
+        border-left-color: var(--color-white);
         background: transparent;
     }
     60% {
-        border-top-color: $success;
-        border-right-color: $success;
-        border-bottom-color: $success;
-        border-left-color: $success;
-        background: $success;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-green);
+        border-bottom-color: var(--color-green);
+        border-left-color: var(--color-green);
+        background: var(--color-green);
     }
     80% {
-        border-top-color: $success;
-        border-right-color: $success;
-        border-bottom-color: $success;
-        border-left-color: $success;
-        background: $success;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-green);
+        border-bottom-color: var(--color-green);
+        border-left-color: var(--color-green);
+        background: var(--color-green);
     }
     100% {
-        border-top-color: $success;
-        border-right-color: $success;
-        border-bottom-color: $success;
-        border-left-color: $success;
-        background: $success;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-green);
+        border-bottom-color: var(--color-green);
+        border-left-color: var(--color-green);
+        background: var(--color-green);
     }
 }
 
 @keyframes validity-animation-valid {
     0% {
-        border-top-color: $success;
-        border-right-color: $white;
-        border-bottom-color: $white;
-        border-left-color: $white;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-white);
+        border-bottom-color: var(--color-white);
+        border-left-color: var(--color-white);
         transform: rotate(0) scale(1);
     }
     20% {
-        border-top-color: $success;
-        border-right-color: $white;
-        border-bottom-color: $white;
-        border-left-color: $white;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-white);
+        border-bottom-color: var(--color-white);
+        border-left-color: var(--color-white);
     }
     40% {
-        border-top-color: $success;
-        border-right-color: $white;
-        border-bottom-color: $white;
-        border-left-color: $white;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-white);
+        border-bottom-color: var(--color-white);
+        border-left-color: var(--color-white);
         background: transparent;
         transform: rotate(360deg) scale(1);
     }
     60% {
-        border-top-color: $success;
-        border-right-color: $success;
-        border-bottom-color: $success;
-        border-left-color: $success;
-        background: $success;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-green);
+        border-bottom-color: var(--color-green);
+        border-left-color: var(--color-green);
+        background: var(--color-green);
         transform: rotate(360deg) scale(1.2);
     }
     80% {
-        border-top-color: $success;
-        border-right-color: $success;
-        border-bottom-color: $success;
-        border-left-color: $success;
-        background: $success;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-green);
+        border-bottom-color: var(--color-green);
+        border-left-color: var(--color-green);
+        background: var(--color-green);
     }
     100% {
-        border-top-color: $success;
-        border-right-color: $success;
-        border-bottom-color: $success;
-        border-left-color: $success;
-        background: $success;
+        border-top-color: var(--color-green);
+        border-right-color: var(--color-green);
+        border-bottom-color: var(--color-green);
+        border-left-color: var(--color-green);
+        background: var(--color-green);
         transform: rotate(360deg) scale(1);
     }
 }
 
 @keyframes validity-animation-error {
     0% {
-        border-top-color: $danger;
-        border-right-color: $white;
-        border-bottom-color: $white;
-        border-left-color: $white;
+        border-top-color: var(--color-red);
+        border-right-color: var(--color-white);
+        border-bottom-color: var(--color-white);
+        border-left-color: var(--color-white);
         transform: rotate(0) scale(1);
     }
     20% {
-        border-top-color: $danger;
-        border-right-color: $white;
-        border-bottom-color: $white;
-        border-left-color: $white;
+        border-top-color: var(--color-red);
+        border-right-color: var(--color-white);
+        border-bottom-color: var(--color-white);
+        border-left-color: var(--color-white);
     }
     40% {
-        border-top-color: $danger;
-        border-right-color: $white;
-        border-bottom-color: $white;
-        border-left-color: $white;
+        border-top-color: var(--color-red);
+        border-right-color: var(--color-white);
+        border-bottom-color: var(--color-white);
+        border-left-color: var(--color-white);
         background: transparent;
         transform: rotate(-360deg) scale(1);
     }
     60% {
-        border-top-color: $danger;
-        border-right-color: $danger;
-        border-bottom-color: $danger;
-        border-left-color: $danger;
-        background: $danger;
+        border-top-color: var(--color-red);
+        border-right-color: var(--color-red);
+        border-bottom-color: var(--color-red);
+        border-left-color: var(--color-red);
+        background: var(--color-red);
         transform: rotate(-360deg) scale(1.2);
     }
     80% {
-        border-top-color: $danger;
-        border-right-color: $danger;
-        border-bottom-color: $danger;
-        border-left-color: $danger;
-        background: $danger;
+        border-top-color: var(--color-red);
+        border-right-color: var(--color-red);
+        border-bottom-color: var(--color-red);
+        border-left-color: var(--color-red);
+        background: var(--color-red);
     }
     100% {
-        border-top-color: $danger;
-        border-right-color: $danger;
-        border-bottom-color: $danger;
-        border-left-color: $danger;
-        background: $danger;
+        border-top-color: var(--color-red);
+        border-right-color: var(--color-red);
+        border-bottom-color: var(--color-red);
+        border-left-color: var(--color-red);
+        background: var(--color-red);
         transform: rotate(-360deg) scale(1);
     }
 }
@@ -192,7 +192,7 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(225deg); }
 }
-  
+
 @keyframes opacity {
     0% { opacity: 0; }
     100% { opacity: 1; }

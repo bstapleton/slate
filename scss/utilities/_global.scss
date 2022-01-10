@@ -1,4 +1,9 @@
 @use '../_variables';
+@use '../mixins/border';
+@use '../mixins/flex';
+@use '../mixins/margin';
+@use '../mixins/padding';
+@use '../mixins/text';
 
 :root {
     font-family: 'Roboto', sans-serif;
@@ -83,4 +88,25 @@ article {
 
 .wrapper {
     max-width: variables.$defaultUnit * 120;
+}
+
+// TODO these get compiled correctly but cannot be applied in the way I was expecting
+@each $breakpoint, $minimum in variables.$grid-breakpoints {
+    @media (min-width: #{$minimum}) {
+        @include margin.margin(#{$breakpoint});
+        @include padding.padding(#{$breakpoint});
+        @include text.text-scale(#{$breakpoint});
+        @include text.text-color(#{$breakpoint});
+        @include text.text-align(#{$breakpoint});
+        @include text.text-weight(#{$breakpoint});
+        @include text.line-height(#{$breakpoint});
+        @include text.letter-spacing(#{$breakpoint});
+        @include border.border-radius(#{$breakpoint});
+        @include border.border-color(#{$breakpoint});
+        @include border.border-width(#{$breakpoint});
+        @include border.border-style(#{$breakpoint});
+        @include flex.flex-container(#{$breakpoint});
+        @include flex.flex-direction(#{$breakpoint});
+        @include flex.flex-basis(#{$breakpoint});
+    }
 }

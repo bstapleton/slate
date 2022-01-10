@@ -1,15 +1,17 @@
+@use '../variables';
+
 @mixin border-radius($breakpoint: false) {
     @if $breakpoint {
-        @each $scale, $multiplier in $scales {
+        @each $scale, $multiplier in variables.$scales {
             .#{$breakpoint}\:border-radius\:#{$scale} {
-                border-radius: calc(#{$defaultUnit} * #{$multiplier});
+                border-radius: calc(#{variables.$defaultUnit} * #{$multiplier});
             }
         }
     }
     @else {
-        @each $scale, $multiplier in $scales {
+        @each $scale, $multiplier in variables.$scales {
             .border-radius\:#{$scale} {
-                border-radius: calc(#{$defaultUnit} * #{$multiplier});
+                border-radius: calc(#{variables.$defaultUnit} * #{$multiplier});
             }
         }
     }
@@ -17,8 +19,8 @@
 
 @mixin border-color($breakpoint: false) {
     @if $breakpoint {
-        @each $dimension in $dimensions {
-            @each $color, $value in $colors {
+        @each $dimension in variables.$dimensions {
+            @each $color, $value in variables.$themeColors {
                 @if $dimension == "all" {
                     .#{$breakpoint}\:border-color\:#{$color} {
                         border-color: $value;
@@ -33,8 +35,8 @@
         }
     }
     @else {
-        @each $dimension in $dimensions {
-            @each $color, $value in $colors {
+        @each $dimension in variables.$dimensions {
+            @each $color, $value in variables.$themeColors {
                 @if $dimension == "all" {
                     .border-color\:#{$color} {
                         border-color: $value;
@@ -51,7 +53,7 @@
 
 @mixin border-width($breakpoint: false) {
     @if $breakpoint {
-        @each $dimension in $dimensions {
+        @each $dimension in variables.$dimensions {
             @for $i from 1 through 8 {
                 @if $dimension == "all" {
                     .#{$breakpoint}\:border-width\:#{$i}px {
@@ -67,7 +69,7 @@
         }
     }
     @else {
-        @each $dimension in $dimensions {
+        @each $dimension in variables.$dimensions {
             @for $i from 1 through 8 {
                 @if ($dimension == "all") {
                     .border-width\:#{$i}px {
@@ -86,8 +88,8 @@
 
 @mixin border-style($breakpoint: false) {
     @if $breakpoint {
-        @each $dimension in $dimensions {
-            @each $style in $borderStyles {
+        @each $dimension in variables.$dimensions {
+            @each $style in variables.$borderStyles {
                 @if $dimension == "all" {
                     .#{$breakpoint}\:border-style\:#{$style} {
                         border-style: #{$style};
@@ -102,8 +104,8 @@
         }
     }
     @else {
-        @each $dimension in $dimensions {
-            @each $style in $borderStyles {
+        @each $dimension in variables.$dimensions {
+            @each $style in variables.$borderStyles {
                 @if ($dimension == "all") {
                     .border-style\:#{$style} {
                         border-style: #{$style};
