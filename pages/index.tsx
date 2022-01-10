@@ -8,6 +8,7 @@ import {Icon} from "../components/Icon";
 import {Scales} from "../data/scales";
 import {Colors} from "../data/colors";
 import {Icons} from "../data/icons";
+import Tile, {TileList} from "../components/Tile";
 
 const Home: NextPage = () => {
   return (
@@ -27,10 +28,7 @@ const Home: NextPage = () => {
             <h4>Heading 4</h4>
             <h5>Heading 5</h5>
             <h6>Heading 6</h6>
-            <Card
-                color={Colors.Primary}
-                flex={true}
-            >
+            <Card color={Colors.Primary}>
               <CardHeader heading={'Hello there'} />
               <CardContent>
                 Card content goes here
@@ -44,25 +42,87 @@ const Home: NextPage = () => {
                   <Chip color={Colors.Secondary} solid>Chippy</Chip>
                   <Chip color={Colors.Primary}>Chippy</Chip>
                 </ChipList>
-                <Icon type={Icons.ArrowDownDouble} />
-                <Icon color={Colors.Orange} type={Icons.ArrowDownSingle} />
-                <Icon color={Colors.Orange} type={Icons.ArrowLeftDouble} />
-                <Icon color={Colors.Orange} type={Icons.ArrowLeftSingle} />
-                <Icon color={Colors.Orange} type={Icons.ArrowRightDouble} />
-                <Icon color={Colors.Orange} type={Icons.ArrowRightSingle} />
-                <Icon color={Colors.Orange} type={Icons.ArrowUpDouble} />
-                <Icon color={Colors.Orange} type={Icons.ArrowUpSingle} />
-                <Icon color={Colors.Orange} type={Icons.Asterisk} />
-                <Icon color={Colors.Orange} type={Icons.Bank} />
-                <Icon color={Colors.Orange} type={Icons.Bell} />
-                <Icon color={Colors.Orange} type={Icons.Briefcase} />
-                <Icon color={Colors.Orange} type={Icons.Chart} />
-                <Icon color={Colors.Orange} type={Icons.Clock} />
-                <Icon color={Colors.Orange} type={Icons.Cogs} />
-                <Icon color={Colors.Orange} type={Icons.Company} />
-                <Icon color={Colors.Orange} type={Icons.Document} />
-                <Icon color={Colors.Orange} type={Icons.DocumentSearch} size={Scales.Larger} />
-                <Icon color={Colors.Orange} type={Icons.Documents} size={Scales.Large} />
+                <TileList>
+                    <Tile column={2} align={'center'}>
+                        ArrowDownDouble
+                        <Icon type={Icons.ArrowDownDouble} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        ArrowDownSingle
+                        <Icon color={Colors.Orange} type={Icons.ArrowDownSingle} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        ArrowLeftDouble
+                        <Icon color={Colors.Orange} type={Icons.ArrowLeftDouble} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        ArrowLeftSingle
+                        <Icon color={Colors.Orange} type={Icons.ArrowLeftSingle} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        ArrowRightDouble
+                        <Icon color={Colors.Orange} type={Icons.ArrowRightDouble} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        ArrowRightSingle
+                        <Icon color={Colors.Orange} type={Icons.ArrowRightSingle} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        ArrowUpDouble
+                        <Icon color={Colors.Orange} type={Icons.ArrowUpDouble} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        ArrowUpSingle
+                        <Icon color={Colors.Orange} type={Icons.ArrowUpSingle} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Asterisk
+                        <Icon color={Colors.Orange} type={Icons.Asterisk} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Bank
+                        <Icon color={Colors.Orange} type={Icons.Bank} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Bell
+                        <Icon color={Colors.Orange} type={Icons.Bell} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Briefcase
+                        <Icon color={Colors.Orange} type={Icons.Briefcase} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Chart
+                        <Icon color={Colors.Orange} type={Icons.Chart} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Clock
+                        <Icon color={Colors.Orange} type={Icons.Clock} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Cogs
+                        <Icon color={Colors.Orange} type={Icons.Cogs} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Company
+                        <Icon color={Colors.Orange} type={Icons.Company} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Document
+                        <Icon color={Colors.Orange} type={Icons.Document} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        DocumentSearch
+                        <Icon color={Colors.Orange} type={Icons.DocumentSearch} size={Scales.Larger} />
+                    </Tile>
+                    <Tile column={2} align={'center'}>
+                        Documents
+                        <Icon color={Colors.Orange} type={Icons.Documents} size={Scales.Large} />
+                    </Tile>
+                </TileList>
+
+
+
                 <Icon color={Colors.Orange} type={Icons.Exit} size={Scales.Large} />
                 <Icon color={Colors.Orange} type={Icons.Email} size={Scales.Large} />
                 <Icon color={Colors.Orange} type={Icons.Envelope} size={Scales.Large} />
