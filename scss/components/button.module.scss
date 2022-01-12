@@ -52,7 +52,6 @@ $buttonMinWidth: variables.$defaultUnit * 8;
 @each $color, $value in variables.$themeColors {
     .#{$color} {
         position: relative;
-        border: 1px solid var(--color-contrast-low);
         color: var(map-get(variables.$contrastColors, $color));
         background-color: var($value);
         transition: all 0.2s ease-in-out;
@@ -60,7 +59,6 @@ $buttonMinWidth: variables.$defaultUnit * 8;
         &:hover,
         &:active,
         &.enabled {
-            border-color: var(#{$value}-light);
             background-color: var(#{$value}-light);
             transition: all 0.2s ease-in-out;
         }
@@ -74,7 +72,6 @@ $buttonMinWidth: variables.$defaultUnit * 8;
 }
 
 .disabled {
-    border: 1px solid var(--color-contrast-low);
     color: var(--color-contrast-high);
     background-color: var(--color-contrast-low);
 
