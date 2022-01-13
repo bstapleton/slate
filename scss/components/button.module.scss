@@ -54,13 +54,13 @@ $buttonMinWidth: variables.$defaultUnit * 8;
         position: relative;
         color: var(map-get(variables.$contrastColors, $color));
         background-color: var($value);
-        transition: all 0.2s ease-in-out;
+        transition: 0.2s ease-in-out;
 
         &:hover,
         &:active,
         &.enabled {
             background-color: var(#{$value}-light);
-            transition: all 0.2s ease-in-out;
+            box-shadow: 0 0 0 calc(#{variables.$defaultUnit} * 0.25) var(--color-bg), 0 0 0 calc(#{variables.$defaultUnit} * 0.5) var(#{$value});
         }
 
         .button__icon {
