@@ -1,7 +1,11 @@
+@use '../variables';
+
 .tile {
-  border-radius: 3px;
+  background-color: var(--color-bg-light);
+  border-radius: variables.$defaultUnit;
   border: 1px solid var(--color-contrast-lower);
-  padding: 10px;
+  padding: variables.$defaultUnit * 1.5;
+  color: var(--color-contrast-high);
 }
 
 .tile_center {
