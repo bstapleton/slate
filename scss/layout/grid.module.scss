@@ -3,26 +3,17 @@
 
 .grid {
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(auto-fill, variables.$defaultUnit * 10);
-  grid-row-gap: .5em;
-  grid-column-gap: 1em;
+  max-width: 100%;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(2, minmax(variables.$defaultUnit * 10, 1fr));
+  grid-gap: variables.$defaultUnit * 2;
 
-  @include grid.sm-up() {
-    grid-template-columns: repeat(2, 1fr);
-  }
   @include grid.md-up() {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  @include grid.lg-up() {
-    grid-template-columns: repeat(8, 1fr);
-  }
-  @include grid.xl-up {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(variables.$defaultUnit * 15, 1fr));
   }
 }
 
+// TODO: work out if I still want to allow this level of control over the grid or not - test around some more, basically
 @for $i from 2 through 12 {
   .span\@#{$i} {
     grid-column-end: span #{$i}
