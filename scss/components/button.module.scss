@@ -57,9 +57,13 @@ $buttonMinWidth: variables.$defaultUnit * 8;
         transition: 0.2s ease-in-out;
 
         &:hover,
-        &:active,
-        &.enabled {
+        &:active {
             background-color: var(#{$value}-light);
+            box-shadow: 0 0 0 calc(#{variables.$defaultUnit} * 0.25) var(--color-bg), 0 0 0 calc(#{variables.$defaultUnit} * 0.5) var(#{$value});
+        }
+
+        &:active {
+            border-radius: $buttonHeight / 6;
             box-shadow: 0 0 0 calc(#{variables.$defaultUnit} * 0.25) var(--color-bg), 0 0 0 calc(#{variables.$defaultUnit} * 0.5) var(#{$value});
         }
 
