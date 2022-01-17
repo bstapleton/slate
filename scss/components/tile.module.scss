@@ -13,3 +13,9 @@
     margin: 0 auto;
   };
 }
+
+@each $color, $value in variables.$themeColors {
+  .#{$color} {
+    background-color: var($value);
+  }
+}
