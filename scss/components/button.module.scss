@@ -64,7 +64,6 @@ $buttonMinWidth: variables.$defaultUnit * 8;
 
         &:active {
             border-radius: $buttonHeight / 6;
-            box-shadow: 0 0 0 calc(#{variables.$defaultUnit} * 0.25) var(--color-bg), 0 0 0 calc(#{variables.$defaultUnit} * 0.5) var(#{$value});
         }
 
         .button__icon {
@@ -79,10 +78,12 @@ $buttonMinWidth: variables.$defaultUnit * 8;
     color: var(--color-contrast-high);
     background-color: var(--color-contrast-low);
 
-    &:hover {
-        background: var(--color-contrast-low);
-        border: 1px solid var(--color-contrast-low);
+    &:hover,
+    &:active {
+        background-color: var(--color-contrast-low);
         cursor: not-allowed;
         text-decoration: none;
+        box-shadow: none;
+        border-radius: $buttonHeight / 3;
     }
 }
