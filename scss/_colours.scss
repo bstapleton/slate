@@ -158,7 +158,9 @@
 
 .page {
   background-color: var(--color-bg);
+  color: var(--color-contrast-high);
 }
+
 .wrapper { // TODO: Shouldn't be here, just temporary
   padding: 20px;
 }
