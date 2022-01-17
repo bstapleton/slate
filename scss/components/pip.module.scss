@@ -1,0 +1,28 @@
+@use '../variables';
+
+.pip {
+  display: inline-block;
+  width: variables.$defaultUnit * 2;
+  height: variables.$defaultUnit * 2;
+  border-radius: 50%;
+  margin: variables.$defaultUnit 0
+}
+
+.left {
+  margin-right: variables.$defaultUnit;
+}
+
+.right {
+  margin-left: variables.$defaultUnit;
+}
+
+@each $color, $value in variables.$themeColors {
+  .#{$color} {
+    border: 1px solid var($value);
+
+    &.solid {
+      background-color: var($value);
+      border: 1px solid var(--color-contrast-lower);
+    }
+  }
+}
