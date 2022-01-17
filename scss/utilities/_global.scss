@@ -90,6 +90,20 @@ article {
     max-width: variables.$defaultUnit * 120;
 }
 
+// TODO temporary stuff that needs cleaning up
+.flex {
+    display: flex;
+}
+
+.items-centre {
+    align-items: center;
+}
+
+.margin-right-s {
+    margin-right: variables.$defaultUnit;
+}
+// end temp stuff
+
 // TODO these get compiled correctly but cannot be applied in the way I was expecting
 @each $breakpoint, $minimum in variables.$grid-breakpoints {
     @media (min-width: #{$minimum}) {
