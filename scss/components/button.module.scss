@@ -14,7 +14,7 @@ $buttonMinWidth: variables.$defaultUnit * 8;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    border-radius: $buttonHeight / 3;
+    border-radius: calc(#{$buttonHeight} / 3);
     align-items: center;
     cursor: pointer;
 
@@ -63,7 +63,7 @@ $buttonMinWidth: variables.$defaultUnit * 8;
         }
 
         &:active {
-            border-radius: $buttonHeight / 6;
+            border-radius: calc(#{$buttonHeight} / 6);
         }
 
         .button__icon {
@@ -84,6 +84,6 @@ $buttonMinWidth: variables.$defaultUnit * 8;
         cursor: not-allowed;
         text-decoration: none;
         box-shadow: none;
-        border-radius: $buttonHeight / 3;
+        border-radius: calc(#{$buttonHeight} / 3);
     }
 }
