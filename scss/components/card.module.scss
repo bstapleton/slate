@@ -1,0 +1,21 @@
+@use '../variables';
+
+.card {
+  display: grid;
+  border: 1px solid green;
+  max-width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(variables.$defaultUnit * 10, 1fr));
+
+  > * {
+    border-right: 1px solid green;
+  }
+
+  .wrap {
+    grid-column-start: 1;
+  }
+
+  .fill {
+    // TODO: end needs to be dynamic based on the dynamic wrap point - but how?
+    grid-column-end: 3;
+  }
+}

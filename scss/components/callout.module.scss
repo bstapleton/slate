@@ -1,6 +1,6 @@
 @use '../variables';
 
-.card {
+.callout {
     margin-bottom: variables.$defaultUnit * 3;
     font-family: 'Lato', sans-serif;
     display: flex;
@@ -17,14 +17,14 @@
     }
 }
 
-.card__header {
+.callout__header {
     border-radius: variables.$defaultUnit variables.$defaultUnit 0 0;
     padding: (variables.$defaultUnit * 1.5) (variables.$defaultUnit * 3);
     border-bottom: 1px solid var(--color-contrast-lower);
     margin: initial !important;
 }
 
-.card__heading {
+.callout__title {
     border: none;
     font-weight: 300;
     margin: 0;
@@ -32,11 +32,11 @@
     display: inline-block;
 }
 
-.card__heading__icon {
+.callout__title__icon {
     fill: var(--color-primary);
 }
 
-.card__content {
+.callout__content {
     padding: (variables.$defaultUnit * 2) (variables.$defaultUnit * 3);
     flex: 1 1 auto;
 
@@ -53,7 +53,7 @@
     }
 }
 
-.card__footer {
+.callout__footer {
     border-radius: 0 0 variables.$defaultUnit variables.$defaultUnit;
     border-top: 1px solid var(--color-contrast-lower);
     padding: (variables.$defaultUnit * 1.5) (variables.$defaultUnit * 3);
