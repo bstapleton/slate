@@ -1,8 +1,8 @@
 import type {NextPage} from 'next'
 import {Fragment} from 'react';
 import Head from 'next/head'
-import Card, {CardContent, CardFooter, CardHeader} from "../components/Card";
-import Chip, {ChipList} from "../components/Chip";
+import Card, {C} from '../components/Card';
+import Callout, {CalloutContent, CalloutFooter, CalloutHeader} from "../components/Callout";
 import Button from '../components/Button';
 import {Icon} from "../components/Icon";
 import {Scales} from "../data/scales";
@@ -94,34 +94,40 @@ const Home: NextPage = () => {
             </div>
             <hr/>
             <h1>Cards</h1>
-            <Card color={Colors.Primary}>
-              <CardContent>
+            <Card color={Colors.Magenta}>
+              <C>stuff</C>
+              <C>stuff2</C>
+              <C wrap={true} fill={true}>stuff2</C>
+            </Card>
+            <h1>Callouts</h1>
+            <Callout color={Colors.Primary}>
+              <CalloutContent>
                 <p>This is a basic card display, without a header or footer</p>
-              </CardContent>
-            </Card>
-            <Card color={Colors.Secondary}>
-              <CardHeader heading={'With a header'} />
-              <CardContent>
+              </CalloutContent>
+            </Callout>
+            <Callout color={Colors.Secondary}>
+              <CalloutHeader heading={'With a header'} />
+              <CalloutContent>
                 <p>This card has a header</p>
-              </CardContent>
-            </Card>
-            <Card color={Colors.Tertiary}>
-              <CardContent>
+              </CalloutContent>
+            </Callout>
+            <Callout color={Colors.Tertiary}>
+              <CalloutContent>
                 <p>This card has a footer</p>
-              </CardContent>
-              <CardFooter>
+              </CalloutContent>
+              <CalloutFooter>
                 <p>Hi there, I am a footer</p>
-              </CardFooter>
-            </Card>
-            <Card color={Colors.Orange}>
-              <CardHeader heading={'With both'} />
-              <CardContent>
+              </CalloutFooter>
+            </Callout>
+            <Callout color={Colors.Orange}>
+              <CalloutHeader heading={'With both'} />
+              <CalloutContent>
                 <p>This one has both</p>
-              </CardContent>
-              <CardFooter>
+              </CalloutContent>
+              <CalloutFooter>
                 <p>Why, hello there~</p>
-              </CardFooter>
-            </Card>
+              </CalloutFooter>
+            </Callout>
             <hr />
             <h1>Tiles</h1>
             <p>The Tile is the simplest form of content container. It has one optional prop, which can be used to override its background colour.</p>

@@ -1,29 +1,36 @@
 import { FC } from 'react'
-import styles from '../scss/components/card.module.scss'
+import styles from '../scss/components/callout.module.scss'
 import cn from 'classnames'
 import {Colors} from "../data/colors";
 
-type CardProps = {
+type CalloutProps = {
     color: Colors
 }
 
-type ContentProps = {
-    wrap?: boolean,
-    fill?: boolean,
+type HeaderProps = {
+    heading?: String,
+    icon?: String
 }
 
-export const C: FC<ContentProps> = ({ wrap, fill, children }) =>
-  <div className={cn({
-      [styles.wrap]: wrap,
-      [styles.fill]: fill,
-  })}>
-      {children}
-  </div>
+export const CalloutHeader: FC<HeaderProps> = ({ heading }) =>
+    <div className={styles.callout__header}>
+        <h3 className={styles.callout__title}>{ heading }</h3>
+    </div>
 
-const Card: FC<CardProps> = ({
+export const CalloutContent: FC = ({ children }) =>
+    <div className={styles.callout__content}>
+        {children}
+    </div>
+
+export const CalloutFooter: FC = ({ children }) =>
+    <div className={styles.callout__footer}>
+        {children}
+    </div>
+
+const Callout: FC<CalloutProps> = ({
     color,
     children }) =>
-<div className={cn(styles.card, {
+<div className={cn(styles.callout, {
     [styles.primary]: color === Colors.Primary,
     [styles.secondary]: color === Colors.Secondary,
     [styles.tertiary]: color === Colors.Tertiary,
@@ -39,9 +46,8 @@ const Card: FC<CardProps> = ({
     [styles.purple]: color === Colors.Purple,
     [styles.pink]: color === Colors.Pink,
     [styles.red]: color === Colors.Red,
-    [styles.magenta]: color === Colors.Magenta,
 })}>
     {children}
 </div>
 
-export default Card
+export default Callout
