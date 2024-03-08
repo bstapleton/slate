@@ -1,0 +1,28 @@
+@use '../variables';
+@use './card.module';
+
+@each $color, $value in variables.$themeColors {
+  .#{$color} {
+    background-color: var(#{$value});
+    border-radius: variables.$defaultUnit;
+    color: var(map-get(variables.$contrastColors, $color));
+
+    .darker {
+      background-color: var(#{$value}-darker);
+      border-radius: 0 0 0 variables.$defaultUnit
+    }
+
+    .dark {
+      background-color: var(#{$value}-dark);
+    }
+
+    .light {
+      background-color: var(#{$value}-light);
+    }
+
+    .lighter {
+      background-color: var(#{$value}-lighter);
+      border-radius: 0 0 variables.$defaultUnit 0;
+    }
+  }
+}

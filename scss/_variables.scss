@@ -134,6 +134,7 @@ $themeColors: map-merge((
     "purple":   --color-purple,
     "pink":     --color-pink,
     "red":      --color-red,
+    "magenta":  --color-magenta,
 ), $themeColors);
 
 $contrastColors: () !default;
@@ -153,4 +154,5 @@ $contrastColors: map-merge((
         "purple":   --color-white,
         "pink":     --color-white,
         "red":      --color-white,
+        "magenta":  --color-white,
 ), $contrastColors);

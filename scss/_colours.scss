@@ -65,6 +65,12 @@
   @include defineColorHSL(--color-red-light, 354, 70%, 62%);
   @include defineColorHSL(--color-red-lighter, 354, 70%, 70%);
 
+  @include defineColorHSL(--color-magenta-darker, 332, 71%, 22%);
+  @include defineColorHSL(--color-magenta-dark, 332, 71%, 30%);
+  @include defineColorHSL(--color-magenta, 332, 71%, 38%);
+  @include defineColorHSL(--color-magenta-light, 332, 71%, 46%);
+  @include defineColorHSL(--color-magenta-lighter, 332, 71%, 54%);
+
   // Shades of grey
   @for $i from 2 through 9 {
     @include defineColorHSL(--color-grey-#{$i}00, 0, 0%, #{$i}+0%);

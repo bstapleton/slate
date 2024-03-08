@@ -1,0 +1,490 @@
+@use '../variables';
+@use '../mixins/grid';
+
+$maxWidth: 500px;
+
+.field {
+  position: relative;
+  margin: 0 0 (variables.$defaultUnit * 2.5) 0;
+  padding: (variables.$defaultUnit * 1.5) 0 0;
+  max-width: $maxWidth + (variables.$defaultUnit * 12);
+
+  &:hover {
+    &.field--select .pseudo-select,
+    textarea,
+    select,
+
+    .field__input {
+      &.disabled,
+      &:disabled,
+      &[contenteditable]:read-only {
+        color: #aaa;
+        border-bottom: 2px solid #aaa;
+        cursor: not-allowed;
+      }
+    }
+
+    .field__helper {
+      color: #666;
+      border-left-width: variables.$defaultUnit;
+      padding-left: variables.$defaultUnit;
+    }
+  }
+
+  &.required {
+    .field__label::after {
+      content: " *";
+    }
+
+    .valid-feedback::before {
+      content: "* Required. ";
+    }
+
+    &.error {
+      .valid-feedback::before {
+        content: "* Error: ";
+        font-weight: bold;
+        color: var(--color-danger);
+      }
+    }
+  }
+
+  &.error,
+  &.warning,
+  &.valid {
+    .completion-indicator {
+      display: block;
+    }
+  }
+
+  .input-group,
+  .login-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: variables.$defaultUnit * 2;
+
+    .input {
+      flex: 1 1 auto;
+    }
+
+    .input-group-append {
+      flex: 0 0 (variables.$defaultUnit * 3);
+    }
+
+    .input-group-prepend {
+      flex: 0 0 (variables.$defaultUnit * 5);
+    }
+  }
+
+  label {
+    &:not(.field__label) {
+      display: none !important;
+    }
+  }
+}
+
+.field.error {
+  .field__label {
+    color: var(--color-red) !important;
+
+    &.error {
+      display: none !important;
+    }
+  }
+
+  .icon.error {
+    display: block;
+  }
+
+  .validation {
+    color: var(--color-red);
+  }
+}
+
+.field.warning {
+  .field__label {
+    color: var(--color-orange) !important;
+
+    &.error {
+      display: none !important;
+    }
+  }
+
+  .icon.warning {
+    display: block;
+
+    svg {
+      fill: var(--color-orange);
+    }
+  }
+
+  .warning-message {
+    display: block;
+    color: var(--color-orange);
+  }
+}
+
+.field.valid {
+  .field__label {
+    color: var(--color-success);
+
+    &.error {
+      display: none !important;
+    }
+  }
+
+  .icon.valid {
+    display: block;
+  }
+
+  .field__helper {
+    border-left-color: var(--color-success);
+  }
+
+  textarea {
+    margin-bottom: -6px;
+  }
+}
+
+.field__helper {
+  display: block;
+  color: #777;
+  border-left: (variables.$defaultUnit * 0.5) solid var(--color-primary);
+  padding-left: variables.$defaultUnit * 1.5;
+  margin-top: (variables.$defaultUnit * 0.5);
+  transition: 0.1s all ease-in-out;
+
+  &.hidden {
+    display: none;
+  }
+
+  &.hovered {
+    color: #666;
+    border-left-width: variables.$defaultUnit;
+    padding-left: variables.$defaultUnit;
+  }
+
+  &.warning {
+    color: var(--color-orange);
+  }
+}
+
+.field,
+.field:hover {
+  &.currency,
+  &.email,
+  &.number,
+  &.password,
+  &.select,
+  &.text,
+  &.textarea,
+  &.date {
+    &.error {
+      .field__pseudoSelector,
+      textarea,
+      select,
+      .field__input {
+        border-color: var(--color-red);
+      }
+    }
+
+    textarea,
+    select,
+    .field__input,
+    .field__pseudoSelector {
+      font-size: initial;
+      border-radius: 5px;
+      border: 1px solid var(--color-contrast-high);
+      background-color: var(--color-bg-light);
+      padding-bottom: variables.$defaultUnit * 2;
+
+      &:hover,
+      &.valid:hover,
+      &.error:hover {
+        border: 1px solid var(--color-contrast-low);
+      }
+
+      &:focus {
+        background-color: var(--color-bg-light);
+      }
+
+      &.valid {
+        border-color: var(--color-green);
+      }
+    }
+
+    .field__input:focus,
+    .field__input:active,
+    .field__input:not([type=range]):focus,
+    .field__input:not([type=range]):active {
+      border: 2px solid var(--color-contrast-low);
+      padding-left: ((variables.$defaultUnit * 1.5) - 1);
+
+      &:hover {
+        border: 2px solid var(--color-contrast-low);
+      }
+    }
+  }
+
+  &.field--typeButtonChoice {
+    &.error,
+    &.valid {
+      .field__input {
+        padding: 0;
+        border: none;
+      }
+    }
+
+    .field__input {
+      padding: 0;
+      border: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+
+  &.field--typeSelect {
+    .field__input {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  &.error.field--typeButtonChoice .field__input {
+    border: none;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.field__label {
+  border-radius: 5px 5px 0 0;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  cursor: text;
+  color: #777;
+  font-weight: normal;
+  display: inline-block;
+  width: initial;
+  font-size: initial;
+
+  @include grid.sm-up() {
+    margin-left: variables.$defaultUnit;
+    padding: 0 (variables.$defaultUnit * 0.5);
+  }
+
+  &.disabled {
+    color: #aaa;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &.active {
+    color: var(--color-primary);
+  }
+}
+
+.field__content {
+  display: flex;
+  align-items: center;
+  margin-bottom: variables.$defaultUnit * 0.5;
+}
+
+.field__prefix {
+  flex: 0 0 (variables.$defaultUnit * 4);
+  height: variables.$defaultUnit * 3;
+
+  @include grid.sm-up() {
+    flex: 0 0 (variables.$defaultUnit * 6);
+    padding-left: (variables.$defaultUnit * 0.75);
+    height: variables.$defaultUnit * 4.5;
+  }
+}
+
+.field__main {
+  flex: 1 1 100%;
+}
+
+.field__affix {
+  flex: 0 0 (variables.$defaultUnit * 4);
+  padding-left: variables.$defaultUnit;
+  height: variables.$defaultUnit * 3;
+
+  @include grid.sm-up() {
+    flex: 0 0 (variables.$defaultUnit * 6);
+    padding-left: (variables.$defaultUnit * 0.75);
+    height: variables.$defaultUnit * 4.5;
+  }
+}
+
+.field .field__helper,
+.validation,
+.warning-message,
+.valid-feedback {
+  max-width: $maxWidth;
+  font-size: variables.$defaultUnit * 1.75;
+
+  @include grid.sm-up() {
+    font-size: variables.$defaultUnit * 1.5;
+  }
+}
+
+.field__input {
+  cursor: text;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-primary);
+  border-radius: 0;
+  padding: (variables.$defaultUnit * 2) (variables.$defaultUnit * 1.5) 0;
+  outline: 0;
+  width: 100%;
+  max-width: $maxWidth;
+  box-shadow: none;
+  margin: 1px;
+
+  &:focus,
+  &:focus:hover {
+    margin: 0;
+    border: 2px solid var(--color-contrast-low);
+  }
+
+  &:hover {
+    border-bottom: 2px solid var(--color-primary);
+  }
+
+  &:disabled,
+  &.disabled,
+  &[contenteditable]:read-only {
+    color: #aaa;
+    background-color: var(--color-bg);
+    border-bottom: 2px solid var(--color-contrast-low);
+
+    &:hover {
+      color: #aaa;
+      background-color: var(--color-bg);
+      border-bottom: 2px solid var(--color-primary);
+      cursor: not-allowed;
+    }
+  }
+}
+
+.field__validation {
+  $negativeMargin: 0 - (variables.$defaultUnit * 6);
+  transition: all 0.2s ease;
+  display: block;
+  border-radius: 50%;
+  width: variables.$defaultUnit * 3;
+  height: variables.$defaultUnit * 3;
+  background: transparent;
+  border: (variables.$defaultUnit * 0.25) solid transparent;
+
+  @include grid.sm-up() {
+    width: variables.$defaultUnit * 4.5;
+    height: variables.$defaultUnit * 4.5;
+  }
+
+  &:after {
+    transition: all 0.2s ease;
+    position: absolute;
+    content: "";
+    width: variables.$defaultUnit * 3;
+    height: variables.$defaultUnit * 3;
+    background-size: variables.$defaultUnit * 3;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    top: -2px;
+    left: -1px;
+
+    @include grid.sm-up() {
+      width: variables.$defaultUnit * 4;
+      height: variables.$defaultUnit * 4;
+      background-size: variables.$defaultUnit * 4.5;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.valid .field__validation,
+.error .field__validation {
+  &:after {
+    animation: validity-symbol-animation 0.5s ease-out alternate both;
+  }
+}
+
+.valid .field__validation {
+  animation: validity-animation-valid 0.5s ease-out alternate both;
+
+  &:after {
+    background-image: url('/images/symbol-tick.svg');
+  }
+}
+
+.error .field__validation {
+  animation: validity-animation-error 0.5s ease-out alternate both;
+
+  &:after {
+    background-image: url('/images/symbol-error.svg');
+  }
+}
+
+//.field__obfuscatedInput {
+//  position: absolute;
+//  width: 0;
+//  height: 0;
+//  padding: 0;
+//  border: none;
+//  top: $defaultUnit * 9;
+//  left: $defaultUnit * 4;
+//
+//  @include grid.sm-up() {
+//    left: $defaultUnit * 6;
+//  }
+//}
+
+//.field__pseudoSelector {
+//  background: $white url('/images/select-down.svg') right ($defaultUnit * 3.5) no-repeat;
+//  background-size: ($defaultUnit * 2) ($defaultUnit);
+//  padding-top: $defaultUnit * 2;
+//
+//  &.disabled {
+//    border-bottom-width: 1px;
+//    cursor: not-allowed;
+//  }
+//
+//  @include grid.xs() {
+//    background-position: 95% ($defaultUnit * 3);
+//  }
+//
+//  @include grid.sm-up() {
+//    background-position: 462px ($defaultUnit * 3);
+//  }
+//}
+//
+//.actions {
+//  padding: ($defaultUnit * 3) ($defaultUnit * 4) $defaultUnit;
+//
+//  @include grid.xs() {
+//    .button:nth-child(1),
+//    .button:nth-child(2) {
+//      width: calc(50% - (#{$defaultUnit} * 1.5));
+//    }
+//
+//    .button:only-child {
+//      width: 100%;
+//    }
+//  }
+//
+//  @include grid.sm-up() {
+//    padding: ($defaultUnit * 3) ($defaultUnit * 6) ($defaultUnit * 3);
+//  }
+//}

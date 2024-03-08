@@ -1,7 +1,8 @@
 import type {NextPage} from 'next'
 import {Fragment} from 'react';
 import Head from 'next/head'
-import Card, {C} from '../components/Card';
+import Card from '../components/Card';
+import ColorCard from '../components/ColorCard';
 import Callout, {CalloutContent, CalloutFooter, CalloutHeader} from "../components/Callout";
 import Button from '../components/Button';
 import {Icon} from "../components/Icon";
@@ -11,6 +12,8 @@ import {Icons} from "../data/icons";
 import Pip from '../components/Pip';
 import Tile from "../components/Tile";
 import GridItem, {GridContainer} from '../components/layout/Grid'
+import Field from "../components/Field";
+import {Fields} from "../data/fields";
 
 const Home: NextPage = () => {
   return (
@@ -94,11 +97,7 @@ const Home: NextPage = () => {
             </div>
             <hr/>
             <h1>Cards</h1>
-            <Card color={Colors.Magenta}>
-              <C>stuff</C>
-              <C>stuff2</C>
-              <C wrap={true} fill={true}>stuff2</C>
-            </Card>
+            <ColorCard color={Colors.Green} />
             <h1>Callouts</h1>
             <Callout color={Colors.Primary}>
               <CalloutContent>
@@ -137,6 +136,9 @@ const Home: NextPage = () => {
               </GridItem>
               <GridItem span={4}>
                 <Tile color={Colors.Purple}>B</Tile>
+              </GridItem>
+              <GridItem span={4}>
+                <Tile color={Colors.Purple}>C</Tile>
               </GridItem>
             </GridContainer>
             <hr />
@@ -377,8 +379,23 @@ const Home: NextPage = () => {
             <p>Buttons can have any of the viable colours from the defined list, they also have an optional boolean prop to disable them, and they can optionally take an icon.</p>
             <Button color={Colors.Primary}>Click me</Button>
             <Button color={Colors.Indigo} iconType={Icons.HorizontalOne}>Indigo button</Button>
-            <Button color={Colors.Green} iconType={Icons.Tick}>Green button</Button>
+            <Button color={Colors.Magenta} iconType={Icons.Tick}>Green button</Button>
             <Button color={Colors.Green} disabled>Disabled button</Button>
+
+            <div className="field field--typeText field--outlined required" id="PhoneDay-wrapper">
+              <div className="field__content field__content--outlined">
+                <div className="field__prefix" />
+                <div className="field__main field__main--outlined">
+                  <label className="field__label field__label--outlined" htmlFor="PhoneDay">Referee telephone number</label>
+                  <input className="field__input field__input--outlined phone-check" data-target="" id="PhoneDay" name="PhoneDay" type="text" />
+                </div>
+                <div className="field__affix">
+                  <div className="field__validationIndicator" />
+                </div>
+              </div>
+            </div>
+
+            <Field type={Fields.Text} help={'I am a help text'} label={'Enter your name'} required={true} valid={false} />
             {/*<Card color={Colors.Primary}>*/}
             {/*  <CardHeader heading={'Hello there'}/>*/}
             {/*  <CardContent>*/}
